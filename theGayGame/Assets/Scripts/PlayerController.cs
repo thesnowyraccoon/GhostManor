@@ -7,10 +7,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     // Inputs
-    InputAction moveAction;
-    InputAction sprintAction;
-    InputAction jumpAction;
-    InputAction lookAction;
+    [Header("Inputs")]
+    public InputAction movementAction;
+    public InputAction sprintAction;
+    public InputAction jumpAction;
+    public InputAction lookAction;
 
     // GameObjects/Components
     [Header("Components")]
@@ -45,10 +46,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         // Initialize Inputs
-        moveAction = InputSystem.actions.FindAction("Move");
-        sprintAction = InputSystem.actions.FindAction("Sprint");
-        jumpAction = InputSystem.actions.FindAction("Jump");
-        lookAction = InputSystem.actions.FindAction("Look");
+        movementAction.Enable();
+        sprintAction.Enable();
+        jumpAction.Enable();
+        lookAction.Enable();
 
         Cursor.lockState = CursorLockMode.Locked;   // Set cursor in game window
 
@@ -68,8 +69,8 @@ public class PlayerController : MonoBehaviour
 
     void Move() // Player movement according to Unity Input System
     {
-        Vector2 moveValue = moveAction.ReadValue<Vector2>();    // Reads Unity Input System values
-        Vector3 moveDirection = transform.right * moveValue.x + transform.forward * moveValue.y; // Move directions
+        Vector3 moveValue = movementAction.ReadValue<Vector3>();    // Reads Unity Input System values
+        Vector3 moveDirection = transform.right * moveValue.x + transform.forward * moveValue.z; // Move directions
 
         controller.Move(moveDirection * currentSpeed * Time.deltaTime); // Player movement
 

@@ -775,18 +775,182 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e11345e99831d4bbf65bfe3ec8f4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementAction:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 08ec1225-7cba-4dc4-a43b-2af5d9f57663
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: WASD
+      m_Id: a31977cc-e2ee-4c35-ad22-86f9f4797a93
+      m_Path: 3DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: left
+      m_Id: da60c4be-2c4c-48fa-9d4e-8625bf837943
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: a7a07ad8-ce0e-45c8-8452-89ac9b615f56
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: forward
+      m_Id: 480d9d13-03ba-4800-b58b-ba323a8cbe31
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: backward
+      m_Id: 6d595cb4-b988-427e-b1c7-72cce381ee9c
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: Controller
+      m_Id: 9a838853-2bcd-490e-826c-bec082396e84
+      m_Path: 3DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: left
+      m_Id: e2014813-0550-40ba-a94b-852722b86408
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 5c7a8a5f-88fb-462d-9779-fe5cfae00558
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: forward
+      m_Id: 6843d5ba-7e19-4f19-b46d-6d69d69cf711
+      m_Path: <Gamepad>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: backward
+      m_Id: 5d46ca55-09eb-40a4-8876-43fcc7583ed4
+      m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    m_Flags: 0
+  sprintAction:
+    m_Name: Sprint
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7c3ed6b9-f635-42dd-b511-f15e1614f733
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e26be780-132d-41e7-a6b2-f7e948417a32
+      m_Path: <Keyboard>/leftShift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Sprint
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 965c105e-a4b2-4cd2-844a-ce60ea960d4d
+      m_Path: <Gamepad>/leftStickPress
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Sprint
+      m_Flags: 0
+    m_Flags: 0
+  jumpAction:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b1e50940-6f94-41b3-bb32-59e8e7b9f636
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b732b92c-c5ea-425a-80c4-09189a53871b
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 9295e3b0-78fd-4631-b659-e19722e08b78
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    m_Flags: 0
+  lookAction:
+    m_Name: Look
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d72b6bb5-57e3-4157-aaf2-bbf1d40dae5b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a0b4364d-9e6f-4f28-b1ea-21b0ebd26a8d
+      m_Path: <Mouse>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 67492515-6d98-414d-95c7-1c70421aa330
+      m_Path: <Gamepad>/rightStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look
+      m_Flags: 0
+    m_Flags: 0
   playerCamera: {fileID: 330585543}
   player: {fileID: 796874973}
   controller: {fileID: 796874974}
   groundCheck: {fileID: 1240114041}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 512
   moveSpeed: 5
   sprintSpeed: 10
   lookSpeed: 80
   jumpHeight: 1.5
   gravity: -39.2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
