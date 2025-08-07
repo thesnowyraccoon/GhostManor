@@ -10731,13 +10731,29 @@ MonoBehaviour:
     m_ActionId: 63754ad4-f539-45ab-b7ce-79d55ddb7a48
     m_ActionName: 'Player/Sprint[/Keyboard/leftShift]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579115209}
+        m_TargetAssemblyTypeName: FPController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6b5cf9f1-154f-449f-99ce-8ee554755986
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 329c248e-18f2-4dcb-a4bf-62751dd98b22
     m_ActionName: 'Player/Crouch[/Keyboard/leftCtrl]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 53bc4592-5711-46ad-90d8-28fbed3588e2
+    m_ActionName: 'Player/Interact[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -10781,7 +10797,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  gravity: -9.81
+  gravity: -39.24
+  jumpHeight: 1.5
   cameraTransform: {fileID: 330585546}
   lookSensitivity: 2
   verticalLookLimit: 90

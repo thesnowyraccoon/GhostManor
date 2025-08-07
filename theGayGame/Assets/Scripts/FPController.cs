@@ -6,6 +6,7 @@ public class FPController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float jumpHeight = 1.5f; 
 
     [Header("Look Settings")]
     [SerializeField] private Transform cameraTransform;
@@ -56,13 +57,21 @@ public class FPController : MonoBehaviour
 
     public void HandleLook()
     {
-        float mouseX = lookInput.x * lookSensitivity;
-        float mouseY = lookInput.y * lookSensitivity;
+        float mouseX = lookInput.x * lookSensitivity / 10;
+        float mouseY = lookInput.y * lookSensitivity / 10;
 
         verticalRotation -= mouseY;
         verticalRotation = Mathf.Clamp(verticalRotation, -verticalLookLimit, verticalLookLimit);
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
     }
 
     public void OnSprint(InputAction.CallbackContext context)
