@@ -6,17 +6,12 @@ public class FPController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravity = -9.81f;
-    [SerializeField] private float jumpHeight = 1.5f;
+    [SerializeField] private float jumpHeight = 1.5f; 
 
     [Header("Look Settings")]
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float lookSensitivity = 2f;
     [SerializeField] private float verticalLookLimit = 90f;
-
-    [Header("Shooting")]
-    public GameObject bulletPrefab;
-    public Transform gunPoint;
-    [SerializeField] private float bulletSpeed = 1000f;
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -88,29 +83,6 @@ public class FPController : MonoBehaviour
         else
         {
             moveSpeed = 5f;
-        }
-    }
-
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Shoot();
-        }
-    }
-
-    private void Shoot()
-    {
-        if (bulletPrefab != null && gunPoint != null)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, gunPoint.rotation);
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-
-            if (rb != null)
-            {
-                rb.AddForce(gunPoint.forward * bulletSpeed);
-                Destroy(bullet, 3);
-            }
         }
     }
 }
