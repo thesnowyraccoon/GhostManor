@@ -7,7 +7,7 @@ public class FPController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float sprintSpeed = 10f;
     [SerializeField] private float gravity = -9.81f;
-    [SerializeField] private float jumpHeight = 1.5f; 
+    [SerializeField] private float jumpHeight = 1.5f;
 
     private float currentSpeed;
 
@@ -47,11 +47,7 @@ public class FPController : MonoBehaviour
     {
         HandleMovement();
         HandleLook();
-
-        if (heldObject != null)
-        {
-            heldObject.MoveToHoldPoint(holdPoint.position);
-        }
+        HandlePickup();
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -121,6 +117,14 @@ public class FPController : MonoBehaviour
         }
     }
 
+    public void HandlePickup()
+    {
+        if (heldObject != null)
+        {
+            heldObject.MoveToHoldPoint(holdPoint.position);
+        }
+    }
+
     public void OnPickUp(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
@@ -147,3 +151,9 @@ public class FPController : MonoBehaviour
         }
     }
 }
+
+    // Title: 
+    // Author: 
+    // Date: August 10 2023
+    // Code version: Unknown
+    // Availability: 
