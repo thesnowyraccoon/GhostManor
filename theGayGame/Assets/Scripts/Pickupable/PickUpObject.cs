@@ -14,6 +14,7 @@ public class PickUpObject : MonoBehaviour
         rb.useGravity = false;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
         transform.SetParent(holdPoint);
@@ -23,6 +24,7 @@ public class PickUpObject : MonoBehaviour
     public void Drop()
     {
         rb.useGravity = true;
+        rb.isKinematic = false;
         rb.constraints = RigidbodyConstraints.None;
 
         transform.SetParent(null);
