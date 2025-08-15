@@ -10,18 +10,19 @@ using System.Collections;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI newText;
-    public string[] dialogue;
-    public float textSpeed;
-    private int index;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    public TextMeshProUGUI newText; //TMP asset
+    public string[] dialogue; //actaul words
+    public float textSpeed; 
+    private int index; //to track what line is what
+    
     void Start()
     {
         newText.text = string.Empty;
         StartDialogue();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) //when you click left mouse button it will fill in lines
