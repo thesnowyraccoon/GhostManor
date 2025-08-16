@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 // 5 Minute DIALOGUE SYSTEM in UNITY Tutorial
 // BMo
@@ -10,34 +13,24 @@ using System.Collections;
 
 public class Dialogue : MonoBehaviour
 {
-    
     public TextMeshProUGUI newText; //TMP asset
-    public string[] dialogue; //actaul words
-    public float textSpeed; 
+    public TextMeshProUGUI infoText; //correaltes to the keybind
+    public float textSpeed;
     private int index; //to track what line is what
-    
+    public string[] dialogue; //actaul words
+    public Color textColour;
+
+
     void Start()
     {
+        
         newText.text = string.Empty;
+        newText.color = textColour;
         StartDialogue();
+    
     }
 
-    
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) //when you click left mouse button it will fill in lines
-        {
-            if (newText.text == dialogue[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                newText.text = dialogue[index]; //and then go to the next line
-            }
-        }
-    }
+
     void StartDialogue()
     {
         index = 0;
@@ -65,5 +58,26 @@ public class Dialogue : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    public void OnDialogue(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (newText.text == dialogue[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                newText.text = dialogue[index]; //and then go to the next line
+            }
+        }
+        if (!context.performed)
+        {
+            infoText.text = context.control.name;
+        }
+       
     }
 }
