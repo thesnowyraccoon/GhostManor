@@ -144,16 +144,39 @@ public class FPController : MonoBehaviour
                 }
             }
         }
-        else
+    }
+
+    public void OnDrop(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        if (heldObject != null)
         {
             heldObject.Drop();
             heldObject = null;
+        }
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+
+            if (interactable != null)
+            {
+                interactable.Interact();
+            }
         }
     }
 }
 
     // Title: 
     // Author: 
-    // Date: August 10 2023
+    // Date: MM DD YYYY
     // Code version: Unknown
     // Availability: 
