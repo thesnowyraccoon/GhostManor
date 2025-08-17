@@ -11031,7 +11031,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Drop[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: 1ffd2cd2-f30d-4a84-b0c5-82922b37c51b
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!143 &579115208
