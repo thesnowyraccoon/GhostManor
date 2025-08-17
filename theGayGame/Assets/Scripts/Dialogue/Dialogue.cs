@@ -11,35 +11,49 @@ using Unity.VisualScripting;
 // Code Version: Unknown
 // Available at https://youtu.be/8oTYabhj248?si=Y4JJXjdaxYVkIulq
 
-public class Dialogue : MonoBehaviour
+
+public class Dialogue : IInteractable
 {
+    public NPCDialogue dialogueData;
     public TextMeshProUGUI newText; //TMP asset
     public TextMeshProUGUI infoText; //correaltes to the keybind
+    public TextMeshProUGUI nameText; //display characters name
+    public GameObject dialoguePanel;
     public float textSpeed;
-    private int index; //to track what line is what
-    public string[] dialogue; //actaul words
-    public Color textColour;
+    public int index; //to track what line is what
+    private bool isDialogueActive;
 
+    public override void Interact()
+    {
+        if (!isDialogueActive)
+        {
+            StartDialogue();
+        }
+       
+    }
 
     void Start()
     {
-        
+
         newText.text = string.Empty;
-        newText.color = textColour;
+        newText.color = dialogueData.textColour;
         StartDialogue();
-    
+
     }
 
 
     void StartDialogue()
     {
+        isDialogueActive = true;
         index = 0;
         StartCoroutine(TypeLine());
+
+        nameText.SetText(dialogueData.charName); 
     }
 
     IEnumerator TypeLine() //This gives the typing effect
     {
-        foreach (char c in dialogue[index].ToCharArray())
+        foreach (char c in dialogueData.dialogue[index].ToCharArray())
         {
             newText.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -48,7 +62,7 @@ public class Dialogue : MonoBehaviour
 
     void NextLine() //continues the dialogue
     {
-        if (index < dialogue.Length - 1)
+        if (index < dialogueData.dialogue.Length - 1)
         {
             index++;
             newText.text = string.Empty;
@@ -56,28 +70,28 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            dialoguePanel.SetActive(false);
         }
     }
 
-    public void OnDialogue(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            if (newText.text == dialogue[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                newText.text = dialogue[index]; //and then go to the next line
-            }
-        }
-        if (!context.performed)
-        {
-            infoText.text = context.control.name;
-        }
-       
-    }
+    // public void OnDialogue(InputAction.CallbackContext context)
+    // {
+    //     if (context.performed)
+    //     {
+    //         if (newText.text == dialogueData.dialogue[index])
+    //         {
+    //             NextLine();
+    //         }
+    //         else
+    //         {
+    //             StopAllCoroutines();
+    //             newText.text = dialogueData.dialogue[index]; //and then go to the next line
+    //         }
+    //     }
+    //     if (!context.performed)
+    //     {
+    //         infoText.text = context.control.name;
+    //     }
+
+    // }
 }
