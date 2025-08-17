@@ -36,10 +36,6 @@ public class FPController : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         currentSpeed = moveSpeed;
     }
 
@@ -48,6 +44,17 @@ public class FPController : MonoBehaviour
         HandleMovement();
         HandleLook();
         HandlePickup();
+
+        if (!PauseMenu.isPaused)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -57,7 +64,11 @@ public class FPController : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        lookInput = context.ReadValue<Vector2>();
+        if (!PauseMenu.isPaused)
+        {
+           lookInput = context.ReadValue<Vector2>(); 
+        }
+        
     }
 
     public void HandleMovement()
