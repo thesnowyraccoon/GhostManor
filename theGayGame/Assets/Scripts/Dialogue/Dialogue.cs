@@ -19,8 +19,8 @@ public class Dialogue : IInteractable
     public TextMeshProUGUI infoText; //correaltes to the keybind
     public TextMeshProUGUI nameText; //display characters name
     public GameObject dialoguePanel;
-    public float textSpeed;
-    public int index; //to track what line is what
+    public float textSpeed = 0.2f;
+    private int index; //to track what line is what
     private bool isDialogueActive;
 
     public override void Interact()
@@ -38,6 +38,7 @@ public class Dialogue : IInteractable
         newText.text = string.Empty;
         newText.color = dialogueData.textColour;
         StartDialogue();
+        //Debug.Log("Dialogue Begin");
 
     }
 
@@ -60,7 +61,7 @@ public class Dialogue : IInteractable
         }
     }
 
-    void NextLine() //continues the dialogue
+     void NextLine() //continues the dialogue
     {
         if (index < dialogueData.dialogue.Length - 1)
         {
@@ -74,24 +75,24 @@ public class Dialogue : IInteractable
         }
     }
 
-    // public void OnDialogue(InputAction.CallbackContext context)
-    // {
-    //     if (context.performed)
-    //     {
-    //         if (newText.text == dialogueData.dialogue[index])
-    //         {
-    //             NextLine();
-    //         }
-    //         else
-    //         {
-    //             StopAllCoroutines();
-    //             newText.text = dialogueData.dialogue[index]; //and then go to the next line
-    //         }
-    //     }
-    //     if (!context.performed)
-    //     {
-    //         infoText.text = context.control.name;
-    //     }
+    public void OnDialogue(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (newText.text == dialogueData.dialogue[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                newText.text = dialogueData.dialogue[index]; //and then go to the next line
+            }
+        }
+        if (!context.performed)
+        {
+            infoText.text = context.control.name;
+        }
 
-    // }
+    }
 }

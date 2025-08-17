@@ -370,9 +370,10 @@ GameObject:
   - component: {fileID: 167120146}
   - component: {fileID: 167120145}
   - component: {fileID: 167120144}
+  - component: {fileID: 167120147}
   m_Layer: 0
   m_Name: Red
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,6 +469,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167120142}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &167120147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167120142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bff9f327bbc945438f3b07f5a57ce90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 2169a8c60c1158c49ae5aaab8b78c815, type: 2}
+  newText: {fileID: 1136163554}
+  infoText: {fileID: 518471554}
+  nameText: {fileID: 214832982}
+  dialoguePanel: {fileID: 979183550}
+  textSpeed: 0.02
 --- !u!1 &214832980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,9 +1028,10 @@ GameObject:
   - component: {fileID: 745069702}
   - component: {fileID: 745069701}
   - component: {fileID: 745069700}
+  - component: {fileID: 745069703}
   m_Layer: 0
   m_Name: Blue
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1107,6 +1127,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745069698}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &745069703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745069698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bff9f327bbc945438f3b07f5a57ce90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 21ae428a9a8c9c2479b0ec412c482921, type: 2}
+  newText: {fileID: 1136163554}
+  infoText: {fileID: 518471554}
+  nameText: {fileID: 214832982}
+  dialoguePanel: {fileID: 979183550}
+  textSpeed: 0.02
 --- !u!1 &979183550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,7 +1909,19 @@ MonoBehaviour:
     m_ActionName: 'Player/Pause/Resume[/Keyboard/escape]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2015536626}
+      - m_Target: {fileID: 167120147}
+        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
+        m_MethodName: OnDialogue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 745069703}
         m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
         m_MethodName: OnDialogue
         m_Mode: 0
@@ -2438,7 +2488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1875465531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3875,9 +3925,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2015536625}
-  - component: {fileID: 2015536626}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: NPCManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3900,24 +3949,6 @@ Transform:
   - {fileID: 167120143}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2015536626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015536624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bff9f327bbc945438f3b07f5a57ce90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: 2169a8c60c1158c49ae5aaab8b78c815, type: 2}
-  newText: {fileID: 1136163554}
-  infoText: {fileID: 518471554}
-  nameText: {fileID: 214832982}
-  dialoguePanel: {fileID: 979183550}
-  textSpeed: 0.02
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
