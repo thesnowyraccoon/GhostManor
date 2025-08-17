@@ -486,7 +486,7 @@ MonoBehaviour:
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
   dialoguePanel: {fileID: 979183550}
-  textSpeed: 0.02
+  textSpeed: 0.2
 --- !u!1 &214832980
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &214832981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1028,7 +1028,6 @@ GameObject:
   - component: {fileID: 745069702}
   - component: {fileID: 745069701}
   - component: {fileID: 745069700}
-  - component: {fileID: 745069703}
   m_Layer: 0
   m_Name: Blue
   m_TagString: NPC
@@ -1127,24 +1126,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745069698}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &745069703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745069698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bff9f327bbc945438f3b07f5a57ce90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: 21ae428a9a8c9c2479b0ec412c482921, type: 2}
-  newText: {fileID: 1136163554}
-  infoText: {fileID: 518471554}
-  nameText: {fileID: 214832982}
-  dialoguePanel: {fileID: 979183550}
-  textSpeed: 0.02
 --- !u!1 &979183550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1137,7 @@ GameObject:
   - component: {fileID: 979183551}
   - component: {fileID: 979183554}
   - component: {fileID: 979183553}
+  - component: {fileID: 979183555}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -1223,6 +1205,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979183550}
   m_CullTransparentMesh: 1
+--- !u!114 &979183555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979183550}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dd0019c85248b459aef918076f055c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newText: {fileID: 1136163554}
+  dialogue:
+  - Testing
+  - Testing
+  infoText: {fileID: 518471554}
+  textSpeed: 0.02
 --- !u!1 &1109539928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,20 +1909,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Pause/Resume[/Keyboard/escape]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 167120147}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: OnDialogue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 745069703}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
+      - m_Target: {fileID: 979183555}
+        m_TargetAssemblyTypeName: PlaceHolder, Assembly-CSharp
         m_MethodName: OnDialogue
         m_Mode: 0
         m_Arguments:
