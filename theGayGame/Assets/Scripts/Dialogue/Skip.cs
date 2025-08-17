@@ -5,13 +5,24 @@ public class Skip : MonoBehaviour
 {
     public NPCDialogue dialogueData;
     public Dialogue dialogueProcess;
+
+    // void Start()
+    // {
+    //     dialogueProcess = Player.GetComponent < Dialogue >();
+        
+    // }
+
+    // void Update()
+    // {
+    //     dialogueProcess.NextLine();  
+    // }
     public void OnDialogue(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             if (dialogueProcess.newText.text == dialogueData.dialogue[dialogueProcess.index])
             {
-               // NextLine(); //accesses the function from the dialogue script
+                // NextLine(); //accesses the function from the dialogue script
             }
             else
             {
