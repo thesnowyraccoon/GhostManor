@@ -154,6 +154,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause/Resume"",
+                    ""type"": ""Button"",
+                    ""id"": ""04014d7f-5b30-49a2-aaf1-9ec7ea536d7e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ContDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""6119ba04-20dc-4c6c-8824-30b4ddcc568a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -453,6 +471,50 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Drop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7059fa54-3b28-40d8-b52e-38a7d607f905"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""Pause/Resume"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f41bd514-306a-4eb0-8541-7621dc0bfc1e"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Pause/Resume"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1dd3247-eaac-40a3-ae6f-84fb46766b6e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""ContDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ced8e782-2323-4fe3-bdcd-405a54092b26"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""ContDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -496,6 +558,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Drop = m_Player.FindAction("Drop", throwIfNotFound: true);
+        m_Player_PauseResume = m_Player.FindAction("Pause/Resume", throwIfNotFound: true);
+        m_Player_ContDialogue = m_Player.FindAction("ContDialogue", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -583,6 +647,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Drop;
+    private readonly InputAction m_Player_PauseResume;
+    private readonly InputAction m_Player_ContDialogue;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -622,6 +688,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Drop".
         /// </summary>
         public InputAction @Drop => m_Wrapper.m_Player_Drop;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/PauseResume".
+        /// </summary>
+        public InputAction @PauseResume => m_Wrapper.m_Player_PauseResume;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ContDialogue".
+        /// </summary>
+        public InputAction @ContDialogue => m_Wrapper.m_Player_ContDialogue;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -669,6 +743,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Drop.started += instance.OnDrop;
             @Drop.performed += instance.OnDrop;
             @Drop.canceled += instance.OnDrop;
+            @PauseResume.started += instance.OnPauseResume;
+            @PauseResume.performed += instance.OnPauseResume;
+            @PauseResume.canceled += instance.OnPauseResume;
+            @ContDialogue.started += instance.OnContDialogue;
+            @ContDialogue.performed += instance.OnContDialogue;
+            @ContDialogue.canceled += instance.OnContDialogue;
         }
 
         /// <summary>
@@ -701,6 +781,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Drop.started -= instance.OnDrop;
             @Drop.performed -= instance.OnDrop;
             @Drop.canceled -= instance.OnDrop;
+            @PauseResume.started -= instance.OnPauseResume;
+            @PauseResume.performed -= instance.OnPauseResume;
+            @PauseResume.canceled -= instance.OnPauseResume;
+            @ContDialogue.started -= instance.OnContDialogue;
+            @ContDialogue.performed -= instance.OnContDialogue;
+            @ContDialogue.canceled -= instance.OnContDialogue;
         }
 
         /// <summary>
@@ -816,5 +902,19 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDrop(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause/Resume" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPauseResume(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ContDialogue" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnContDialogue(InputAction.CallbackContext context);
     }
 }
