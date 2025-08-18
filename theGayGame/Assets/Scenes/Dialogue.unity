@@ -350,6 +350,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 339011225}
   - {fileID: 979183551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -370,9 +371,10 @@ GameObject:
   - component: {fileID: 167120146}
   - component: {fileID: 167120145}
   - component: {fileID: 167120144}
+  - component: {fileID: 167120147}
   m_Layer: 0
   m_Name: Red
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -386,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 167120142}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7467012, y: 1.0010489, z: 2.2}
+  m_LocalPosition: {x: -4.73, y: 1.0010489, z: 2.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -411,10 +413,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.6554575
+  m_Height: 2.0300174
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.016349792, y: 0.015008688, z: -0.06683898}
 --- !u!23 &167120145
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -468,6 +470,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167120142}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &167120147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167120142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bff9f327bbc945438f3b07f5a57ce90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 2169a8c60c1158c49ae5aaab8b78c815, type: 2}
+  NPC: {fileID: 167120142}
+  newText: {fileID: 1136163554}
+  infoText: {fileID: 518471554}
+  nameText: {fileID: 214832982}
+  dialoguePanel: {fileID: 979183550}
+  textSpeed: 0.02
 --- !u!1 &214832980
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +624,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214832980}
+  m_CullTransparentMesh: 1
+--- !u!1 &339011224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339011225}
+  - component: {fileID: 339011227}
+  - component: {fileID: 339011226}
+  m_Layer: 5
+  m_Name: Reticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &339011225
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339011224}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 144262118}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &339011226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339011224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7058824}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &339011227
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339011224}
   m_CullTransparentMesh: 1
 --- !u!1 &382696307
 GameObject:
@@ -1009,9 +1105,10 @@ GameObject:
   - component: {fileID: 745069702}
   - component: {fileID: 745069701}
   - component: {fileID: 745069700}
+  - component: {fileID: 745069703}
   m_Layer: 0
   m_Name: Blue
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1107,6 +1204,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745069698}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &745069703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745069698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bff9f327bbc945438f3b07f5a57ce90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 21ae428a9a8c9c2479b0ec412c482921, type: 2}
+  NPC: {fileID: 745069698}
+  newText: {fileID: 1136163554}
+  infoText: {fileID: 518471554}
+  nameText: {fileID: 214832982}
+  dialoguePanel: {fileID: 979183550}
+  textSpeed: 0.02
 --- !u!1 &979183550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,6 +1963,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1193377578}
+        m_TargetAssemblyTypeName: FPController, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 53bc4592-5711-46ad-90d8-28fbed3588e2
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
@@ -1871,7 +1999,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Pause/Resume[/Keyboard/escape]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2015536626}
+      - m_Target: {fileID: 167120147}
         m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
         m_MethodName: OnDialogue
         m_Mode: 0
@@ -2438,7 +2566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1875465531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3875,9 +4003,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2015536625}
-  - component: {fileID: 2015536626}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: NPCManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3900,24 +4027,6 @@ Transform:
   - {fileID: 167120143}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2015536626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015536624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bff9f327bbc945438f3b07f5a57ce90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: 2169a8c60c1158c49ae5aaab8b78c815, type: 2}
-  newText: {fileID: 1136163554}
-  infoText: {fileID: 518471554}
-  nameText: {fileID: 214832982}
-  dialoguePanel: {fileID: 979183550}
-  textSpeed: 0.02
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

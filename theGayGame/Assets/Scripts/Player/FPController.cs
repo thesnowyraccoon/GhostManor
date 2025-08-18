@@ -59,7 +59,11 @@ public class FPController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        if (!Dialogue.isDialogueActive)
+        {
+             moveInput = context.ReadValue<Vector2>();
+        }
+       
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -96,10 +100,14 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && controller.isGrounded)
+        if (!Dialogue.isDialogueActive)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+          if (context.performed && controller.isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }  
         }
+            
     }
 
     public void OnCrouch(InputAction.CallbackContext context)
