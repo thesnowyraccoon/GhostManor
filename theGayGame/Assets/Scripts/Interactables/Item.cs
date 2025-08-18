@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PickUpObject : MonoBehaviour
+public class Item : MonoBehaviour
 {
     private Rigidbody rb;
+
+    public string itemName;
 
     void Awake()
     {

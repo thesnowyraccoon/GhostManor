@@ -23,15 +23,18 @@ public class FPController : MonoBehaviour
 
     [Header("Pickup Settings")]
     [SerializeField] private float pickupRange = 3f;
-    [SerializeField] private Transform holdPoint;
 
-    private PickUpObject heldObject;
+    public Transform holdPoint;
+    public Item heldObject;
 
     private CharacterController controller;
     private Vector2 moveInput;
     private Vector2 lookInput;
     private Vector3 velocity;
     private float verticalRotation = 0f;
+
+    [Header("Inventory Settings")]
+    public HotbarController hotbar;
 
     private void Awake()
     {
@@ -66,9 +69,8 @@ public class FPController : MonoBehaviour
     {
         if (!PauseMenu.isPaused)
         {
-           lookInput = context.ReadValue<Vector2>(); 
+            lookInput = context.ReadValue<Vector2>();
         }
-        
     }
 
     public void HandleMovement()
@@ -140,18 +142,30 @@ public class FPController : MonoBehaviour
     {
         if (!context.performed) return;
 
-        if (heldObject == null)
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
         {
-            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
+            if (hit.collider.CompareTag("Item"))
             {
-                PickUpObject pickUp = hit.collider.GetComponent<PickUpObject>();
+                Item pickUp = hit.collider.GetComponent<Item>();
 
-                if (pickUp != null)
+                if (pickUp != null && holdPoint.childCount < 3)
                 {
+                    if (heldObject != null)
+                    {
+                        heldObject.gameObject.SetActive(false);
+                        heldObject = null;
+                    }
+
                     pickUp.PickUp(holdPoint);
                     heldObject = pickUp;
+
+                    hotbar.AddItem(pickUp.gameObject);
+                }
+                else if (holdPoint.childCount >= 3)
+                {
+                    Debug.Log("Inventory full");
                 }
             }
         }
@@ -163,6 +177,8 @@ public class FPController : MonoBehaviour
 
         if (heldObject != null)
         {
+            hotbar.RemoveItem(heldObject.gameObject);
+
             heldObject.Drop();
             heldObject = null;
         }
@@ -186,8 +202,8 @@ public class FPController : MonoBehaviour
     }
 }
 
-    // Title: 
-    // Author: 
-    // Date: MM DD YYYY
-    // Code version: Unknown
-    // Availability: 
+// Title: 
+// Author: 
+// Date: MM DD YYYY
+// Code version: Unknown
+// Availability: 
