@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CompareObjects : IInteractable
@@ -14,7 +13,6 @@ public class CompareObjects : IInteractable
 
     void CheckHands()
     {
-
         // What object does the player have in there hands
         if (objectType == player.heldObject)
         {
