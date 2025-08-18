@@ -20,12 +20,13 @@ public class Dialogue : IInteractable
     public TextMeshProUGUI nameText; //display characters name
     public GameObject dialoguePanel;
     public float textSpeed = 0.02f;
+    public static bool isDialogueActive;
     //private int index; //to track what line is what
-    
+
     public override void Interact()
     {
         StartDialogue();
-        
+
     }
 
     void Start()
@@ -36,13 +37,14 @@ public class Dialogue : IInteractable
 
 
     void StartDialogue()
-    {   
+    {
         dialoguePanel.SetActive(true);
         newText.text = string.Empty;
         //newText.color = dialogueData.textColour; will fix this in final
-        nameText.SetText(dialogueData.charName); 
+        nameText.SetText(dialogueData.charName);
         dialogueData.index = 0;
         StartCoroutine(TypeLine());
+        isDialogueActive = true;
 
     }
 
@@ -67,6 +69,7 @@ public class Dialogue : IInteractable
         else
         {
             dialoguePanel.SetActive(false);
+            isDialogueActive = false;
         }
     }
 
