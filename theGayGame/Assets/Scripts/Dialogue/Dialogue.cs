@@ -14,47 +14,42 @@ using Unity.VisualScripting;
 
 public class Dialogue : IInteractable
 {
-    public NPCDialogue dialogueData;
+    public NPCDialogue dialogueData; //accesses the data
     public TextMeshProUGUI newText; //TMP asset
     public TextMeshProUGUI infoText; //correaltes to the keybind
     public TextMeshProUGUI nameText; //display characters name
     public GameObject dialoguePanel;
-    public float textSpeed = 0.2f;
-    private int index; //to track what line is what
-    private bool isDialogueActive;
-
+    public float textSpeed = 0.02f;
+    //private int index; //to track what line is what
+    
     public override void Interact()
     {
-        if (!isDialogueActive)
-        {
-            StartDialogue();
-        }
-       
+        StartDialogue();
+        
     }
 
     void Start()
     {
-
-        newText.text = string.Empty;
-        newText.color = dialogueData.textColour;
-        StartDialogue();
-        //Debug.Log("Dialogue Begin");
+        dialoguePanel.SetActive(false);
 
     }
 
 
     void StartDialogue()
-    {
-        isDialogueActive = true;
-        index = 0;
+    {   
+        dialoguePanel.SetActive(true);
+        newText.text = string.Empty;
+        //newText.color = dialogueData.textColour; will fix this in final
+        nameText.SetText(dialogueData.charName); 
+        dialogueData.index = 0;
         StartCoroutine(TypeLine());
 
-        nameText.SetText(dialogueData.charName); 
     }
 
     IEnumerator TypeLine() //This gives the typing effect
     {
-        foreach (char c in dialogueData.dialogue[index].ToCharArray())
+    
+        foreach (char c in dialogueData.dialogue[dialogueData.index].ToCharArray())
         {
             newText.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -63,9 +58,9 @@ public class Dialogue : IInteractable
 
      void NextLine() //continues the dialogue
     {
-        if (index < dialogueData.dialogue.Length - 1)
+        if (dialogueData.index < dialogueData.dialogue.Length - 1)
         {
-            index++;
+            dialogueData.index++;
             newText.text = string.Empty;
             StartCoroutine(TypeLine());
         }
@@ -79,19 +74,19 @@ public class Dialogue : IInteractable
     {
         if (context.performed)
         {
-            if (newText.text == dialogueData.dialogue[index])
+            if (newText.text == dialogueData.dialogue[dialogueData.index])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                newText.text = dialogueData.dialogue[index]; //and then go to the next line
+                newText.text = dialogueData.dialogue[dialogueData.index]; //and then go to the next line
             }
         }
         if (!context.performed)
         {
-            infoText.text = context.control.name;
+            infoText.text = context.control.name + (" to continue");
         }
 
     }
