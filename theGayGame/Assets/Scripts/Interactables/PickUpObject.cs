@@ -3,6 +3,7 @@ using UnityEngine;
 public class PickUpObject : MonoBehaviour
 {
     private Rigidbody rb;
+    
 
     void Awake()
     {

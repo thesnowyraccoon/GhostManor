@@ -14,45 +14,43 @@ using Unity.VisualScripting;
 
 public class Dialogue : IInteractable
 {
-    public NPCDialogue dialogueData;
+    public NPCDialogue dialogueData; //accesses the data
+    public GameObject NPC; //the 'sprite'
     public TextMeshProUGUI newText; //TMP asset
     public TextMeshProUGUI infoText; //correaltes to the keybind
     public TextMeshProUGUI nameText; //display characters name
     public GameObject dialoguePanel;
-    public float textSpeed;
-    public int index; //to track what line is what
-    private bool isDialogueActive;
+    public float textSpeed = 0.02f;
+    public static bool isDialogueActive;
+    private int index; //to track what line is what
 
     public override void Interact()
     {
-        if (!isDialogueActive)
-        {
-            StartDialogue();
-        }
-       
+        StartDialogue();
+
     }
 
     void Start()
     {
-
-        newText.text = string.Empty;
-        newText.color = dialogueData.textColour;
-        StartDialogue();
-
+        dialoguePanel.SetActive(false);
     }
 
 
     void StartDialogue()
     {
-        isDialogueActive = true;
+        dialoguePanel.SetActive(true);
+        newText.text = string.Empty;
+        //newText.color = dialogueData.textColour; will fix this in final
+        nameText.SetText(dialogueData.charName);
         index = 0;
         StartCoroutine(TypeLine());
+        isDialogueActive = true;
 
-        nameText.SetText(dialogueData.charName); 
     }
 
     IEnumerator TypeLine() //This gives the typing effect
     {
+    
         foreach (char c in dialogueData.dialogue[index].ToCharArray())
         {
             newText.text += c;
@@ -60,9 +58,9 @@ public class Dialogue : IInteractable
         }
     }
 
-    void NextLine() //continues the dialogue
+     void NextLine() //continues the dialogue
     {
-        if (index < dialogueData.dialogue.Length - 1)
+        if (index < dialogueData.dialogue.Length -1)
         {
             index++;
             newText.text = string.Empty;
@@ -71,27 +69,28 @@ public class Dialogue : IInteractable
         else
         {
             dialoguePanel.SetActive(false);
+            isDialogueActive = false;
         }
     }
 
-    // public void OnDialogue(InputAction.CallbackContext context)
-    // {
-    //     if (context.performed)
-    //     {
-    //         if (newText.text == dialogueData.dialogue[index])
-    //         {
-    //             NextLine();
-    //         }
-    //         else
-    //         {
-    //             StopAllCoroutines();
-    //             newText.text = dialogueData.dialogue[index]; //and then go to the next line
-    //         }
-    //     }
-    //     if (!context.performed)
-    //     {
-    //         infoText.text = context.control.name;
-    //     }
+    public void OnDialogue(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (newText.text == dialogueData.dialogue[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                newText.text = dialogueData.dialogue[index]; //and then go to the next line
+            }
+        }
+        if (!context.performed)
+        {
+            infoText.text = context.control.name + " to continue";
+        }
 
-    // }
+    }
 }
