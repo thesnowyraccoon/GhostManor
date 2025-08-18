@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject dialogueBox;
     public GameObject controlsMenu;
+    public GameObject hotbarSlots;
     public static bool isPaused;
 
     void Start()
@@ -24,6 +25,7 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         controlsMenu.SetActive(false);
+        hotbarSlots.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -34,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        hotbarSlots.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
         dialogueBox.SetActive(false);

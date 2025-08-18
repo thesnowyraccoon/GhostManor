@@ -109,7 +109,6 @@ public class FPController : MonoBehaviour
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }  
         }
-            
     }
 
     public void OnCrouch(InputAction.CallbackContext context)
@@ -209,9 +208,3 @@ public class FPController : MonoBehaviour
         }
     }
 }
-
-// Title: 
-// Author: 
-// Date: MM DD YYYY
-// Code version: Unknown
-// Availability: 

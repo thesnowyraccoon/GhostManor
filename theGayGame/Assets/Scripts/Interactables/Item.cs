@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     private Rigidbody rb;
-    
 
     public string itemName;
 

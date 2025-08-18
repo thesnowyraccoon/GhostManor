@@ -1,9 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting;
 
 // 5 Minute DIALOGUE SYSTEM in UNITY Tutorial
 // BMo
@@ -20,6 +18,7 @@ public class Dialogue : IInteractable
     public TextMeshProUGUI infoText; //correaltes to the keybind
     public TextMeshProUGUI nameText; //display characters name
     public GameObject dialoguePanel;
+    public GameObject hotbarSlots;
     public float textSpeed = 0.02f;
     public static bool isDialogueActive;
     private int index; //to track what line is what
@@ -27,7 +26,6 @@ public class Dialogue : IInteractable
     public override void Interact()
     {
         StartDialogue();
-
     }
 
     void Start()
@@ -35,22 +33,20 @@ public class Dialogue : IInteractable
         dialoguePanel.SetActive(false);
     }
 
-
     void StartDialogue()
     {
         dialoguePanel.SetActive(true);
+        hotbarSlots.SetActive(false);
         newText.text = string.Empty;
         //newText.color = dialogueData.textColour; will fix this in final
         nameText.SetText(dialogueData.charName);
         index = 0;
         StartCoroutine(TypeLine());
         isDialogueActive = true;
-
     }
 
     IEnumerator TypeLine() //This gives the typing effect
     {
-    
         foreach (char c in dialogueData.dialogue[index].ToCharArray())
         {
             newText.text += c;
@@ -58,7 +54,7 @@ public class Dialogue : IInteractable
         }
     }
 
-     void NextLine() //continues the dialogue
+    void NextLine() //continues the dialogue
     {
         if (index < dialogueData.dialogue.Length -1)
         {
@@ -69,6 +65,7 @@ public class Dialogue : IInteractable
         else
         {
             dialoguePanel.SetActive(false);
+            hotbarSlots.SetActive(true);
             isDialogueActive = false;
         }
     }
@@ -91,6 +88,5 @@ public class Dialogue : IInteractable
         {
             infoText.text = context.control.name + " to continue";
         }
-
     }
 }
