@@ -15,13 +15,14 @@ using Unity.VisualScripting;
 public class Dialogue : IInteractable
 {
     public NPCDialogue dialogueData; //accesses the data
+    public GameObject NPC; //the 'sprite'
     public TextMeshProUGUI newText; //TMP asset
     public TextMeshProUGUI infoText; //correaltes to the keybind
     public TextMeshProUGUI nameText; //display characters name
     public GameObject dialoguePanel;
     public float textSpeed = 0.02f;
     public static bool isDialogueActive;
-    //private int index; //to track what line is what
+    private int index; //to track what line is what
 
     public override void Interact()
     {
@@ -32,7 +33,6 @@ public class Dialogue : IInteractable
     void Start()
     {
         dialoguePanel.SetActive(false);
-
     }
 
 
@@ -42,7 +42,7 @@ public class Dialogue : IInteractable
         newText.text = string.Empty;
         //newText.color = dialogueData.textColour; will fix this in final
         nameText.SetText(dialogueData.charName);
-        dialogueData.index = 0;
+        index = 0;
         StartCoroutine(TypeLine());
         isDialogueActive = true;
 
@@ -51,7 +51,7 @@ public class Dialogue : IInteractable
     IEnumerator TypeLine() //This gives the typing effect
     {
     
-        foreach (char c in dialogueData.dialogue[dialogueData.index].ToCharArray())
+        foreach (char c in dialogueData.dialogue[index].ToCharArray())
         {
             newText.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -60,9 +60,9 @@ public class Dialogue : IInteractable
 
      void NextLine() //continues the dialogue
     {
-        if (dialogueData.index < dialogueData.dialogue.Length - 1)
+        if (index < dialogueData.dialogue.Length -1)
         {
-            dialogueData.index++;
+            index++;
             newText.text = string.Empty;
             StartCoroutine(TypeLine());
         }
@@ -77,14 +77,14 @@ public class Dialogue : IInteractable
     {
         if (context.performed)
         {
-            if (newText.text == dialogueData.dialogue[dialogueData.index])
+            if (newText.text == dialogueData.dialogue[index])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                newText.text = dialogueData.dialogue[dialogueData.index]; //and then go to the next line
+                newText.text = dialogueData.dialogue[index]; //and then go to the next line
             }
         }
         if (!context.performed)

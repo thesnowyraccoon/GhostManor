@@ -483,6 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 2169a8c60c1158c49ae5aaab8b78c815, type: 2}
+  NPC: {fileID: 167120142}
   newText: {fileID: 1136163554}
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
@@ -1216,6 +1217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 21ae428a9a8c9c2479b0ec412c482921, type: 2}
+  NPC: {fileID: 745069698}
   newText: {fileID: 1136163554}
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
