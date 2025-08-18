@@ -1,12 +1,15 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CompareObjects : IInteractable
 {
-    public Rigidbody objectType;
+    public FPController player;
+    public PickUpObject objectType;
     public GameObject Npc;
+    
     public override void Interact()
     {
-        //CheckHands()
+        CheckHands();
     }
     void Start()
     {
@@ -21,14 +24,16 @@ public class CompareObjects : IInteractable
 
     void CheckHands()
     {
-        //What object does the player have in there hands
-        /*if (object in holdpoint = obectType)
+
+        // //What object does the player have in there hands
+        if (objectType == player.heldObject)
         {
-            Destroy.Npc;
+            Destroy(gameObject);
+            Destroy(player.heldObject.gameObject);
         }
         else
         {
             Debug.Log("Wrong");
-        }*/ 
+        }
     }
 }

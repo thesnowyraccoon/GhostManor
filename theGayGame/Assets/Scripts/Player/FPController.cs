@@ -25,7 +25,7 @@ public class FPController : MonoBehaviour
     [SerializeField] private float pickupRange = 3f;
     [SerializeField] private Transform holdPoint;
 
-    private PickUpObject heldObject;
+    public PickUpObject heldObject;
 
     private CharacterController controller;
     private Vector2 moveInput;

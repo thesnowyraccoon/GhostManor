@@ -15,7 +15,12 @@ MonoBehaviour:
   charName: Note
   dialogue:
   - This manor is haunted by ghosts, I need you to get rid of them
-  - Bring there objects to them (The capsules are the ghosts, bring them objects
+  - Bring their objects to them (The capsules are the ghosts, bring them objects
     of the same colour)
+  - If an object is correct the ghost will dissapear
+  - If the object is incorrect.....
+  - Nothing will happen.         yet.
   - You can use tab to pause the game and see controls
+  - There is currently no end game for the prototype :p but there are 6 ghosts to
+    free
   textColour: {r: 0, g: 0, b: 0, a: 0}
