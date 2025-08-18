@@ -89,7 +89,7 @@ public class Dialogue : IInteractable
         }
         if (!context.performed)
         {
-            infoText.text = context.control.name + (" to continue");
+            infoText.text = context.control.name + " to continue";
         }
 
     }
