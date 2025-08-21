@@ -10993,6 +10993,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9b09f085-bf61-497f-9602-50aa4dec8262
     m_ActionName: 'Player/Shoot[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 579115209}
+        m_TargetAssemblyTypeName: FPController, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d05c3c30-7a23-4c94-b535-e3e7cac92c65
+    m_ActionName: 'Player/Interact1[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -11050,6 +11066,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3027700676399474048, guid: 0c0ef89b4f3e25948a5ccc90b2c18861, type: 3}
   gunPoint: {fileID: 1532458967}
   bulletSpeed: 1000
+  interactRange: 3
 --- !u!1 &775921803
 GameObject:
   m_ObjectHideFlags: 0
