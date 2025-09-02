@@ -156,9 +156,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact1"",
+                    ""name"": ""Damage"",
                     ""type"": ""Button"",
-                    ""id"": ""d05c3c30-7a23-4c94-b535-e3e7cac92c65"",
+                    ""id"": ""d70c9846-38da-4ae4-ab17-0597b5709cda"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -465,12 +465,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""18271b80-6252-42e9-9cec-af7296414430"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""248fa4f2-2ff7-4a68-b121-b6ba30723b01"",
+                    ""path"": ""<Keyboard>/b"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""Interact1"",
+                    ""action"": ""Damage"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -516,7 +516,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
-        m_Player_Interact1 = m_Player.FindAction("Interact1", throwIfNotFound: true);
+        m_Player_Damage = m_Player.FindAction("Damage", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -604,7 +604,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Shoot;
-    private readonly InputAction m_Player_Interact1;
+    private readonly InputAction m_Player_Damage;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -645,9 +645,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Interact1".
+        /// Provides access to the underlying input action "Player/Damage".
         /// </summary>
-        public InputAction @Interact1 => m_Wrapper.m_Player_Interact1;
+        public InputAction @Damage => m_Wrapper.m_Player_Damage;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -695,9 +695,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
-            @Interact1.started += instance.OnInteract1;
-            @Interact1.performed += instance.OnInteract1;
-            @Interact1.canceled += instance.OnInteract1;
+            @Damage.started += instance.OnDamage;
+            @Damage.performed += instance.OnDamage;
+            @Damage.canceled += instance.OnDamage;
         }
 
         /// <summary>
@@ -730,9 +730,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
-            @Interact1.started -= instance.OnInteract1;
-            @Interact1.performed -= instance.OnInteract1;
-            @Interact1.canceled -= instance.OnInteract1;
+            @Damage.started -= instance.OnDamage;
+            @Damage.performed -= instance.OnDamage;
+            @Damage.canceled -= instance.OnDamage;
         }
 
         /// <summary>
@@ -849,11 +849,11 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnShoot(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Interact1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Damage" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnInteract1(InputAction.CallbackContext context);
+        void OnDamage(InputAction.CallbackContext context);
     }
 }
