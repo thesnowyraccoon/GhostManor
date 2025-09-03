@@ -2,10 +2,20 @@ using UnityEngine;
 
 public class Hide : IInteractable 
 {
-    public FPController player;
-    private float height;
+    private FPController playerController;
+    private CharacterController controller;
+    public GameObject player;
     public float hideHeight = 0.5f;
     private bool isHiding = false;
+    public GameObject hidingSpot;
+    public GameObject exitSpot;
+
+    void Start()
+    {
+        playerController = player.GetComponent<FPController>();
+        controller = player.GetComponent<CharacterController>();
+        
+    }
 
     public override void Interact()
     {
@@ -13,16 +23,16 @@ public class Hide : IInteractable
         if (!isHiding)
         {
             isHiding = true;
-            height = hideHeight;
-            //transform player position
+            controller.height = hideHeight;
+            player.transform.position = hidingSpot.GetComponent<Transform>().position;
         }
         else
         {
             isHiding = false;
-            height = player.standHeight;
-            //transform player position
+            controller.height = playerController.standHeight;
+            player.transform.position = exitSpot.GetComponent<Transform>().position;
         }
-        
+
     }
   
 }

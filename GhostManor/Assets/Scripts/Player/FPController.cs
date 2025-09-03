@@ -66,7 +66,7 @@ public class FPController : MonoBehaviour
     {
         if (!Dialogue.isDialogueActive)
         {
-             moveInput = context.ReadValue<Vector2>();
+            moveInput = context.ReadValue<Vector2>();
         }
        
     }
