@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class FPController : MonoBehaviour
 {
@@ -14,11 +15,12 @@ public class FPController : MonoBehaviour
     [Header("Look Settings")]
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float lookSensitivity = 2f;
+    [SerializeField] private Slider sensitivity; 
     [SerializeField] private float verticalLookLimit = 90f;
 
     [Header("Crouch Settings")]
     [SerializeField] float crouchHeight = 1f;
-    [SerializeField] float standHeight = 2f;
+    [SerializeField] public float standHeight = 2f;
     [SerializeField] float crouchSpeed = 2.5f;
 
     [Header("Pickup Settings")]

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 //Code Version: Unknown
 //Available at: https://youtu.be/rAX_r0yBwzQ?si=mfKw2zM2xn2QU5tB
 
+
+//SoundManager.Play("SoundName");
 public class SoundManager : MonoBehaviour
 {
     private static SoundManager Instance;
