@@ -9,11 +9,21 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
+    [Header("Pause")]
     public GameObject pauseMenu;
-    public GameObject dialogueBox;
-    public GameObject controlsMenu;
+    Animator pauseAnimation;
+    bool isPlaying = false;
+
     public GameObject hotbarSlots;
+    public GameObject dialogueBox;
+
+    [Header("Controls")]
+    public GameObject controlsMenu;
+
+    [Header("Settings")]
     public GameObject settingsMenu;
+    
+    
     public static bool isPaused;
 
     void Start()
@@ -21,6 +31,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(false);
         settingsMenu.SetActive(false);
+        pauseAnimation = GetComponent<Animator>();
     }
 
     public void PauseGame()
@@ -32,6 +43,17 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         dialogueBox.SetActive(false);
+
+        if (!isPlaying)
+        {
+            isPlaying = true;
+            pauseAnimation.SetBool("open", isPlaying);
+        }
+        else
+        {
+            isPlaying = false;
+            pauseAnimation.SetBool("open", isPlaying);
+        }
         
     }
 
@@ -65,11 +87,6 @@ public class PauseMenu : MonoBehaviour
     public void Back()
     {
         PauseGame();
-        // controlsMenu.SetActive(false);
-        // pauseMenu.SetActive(true);
-        // Time.timeScale = 0f;
-        // dialogueBox.SetActive(false);
-        // isPaused = true;
     }
 
     public void QuitGame()
