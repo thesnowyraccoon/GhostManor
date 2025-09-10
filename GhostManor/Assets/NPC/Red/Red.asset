@@ -16,5 +16,9 @@ MonoBehaviour:
   dialogue:
   - This is a test
   - miaw miaw miaw
+  - thanks!
   textColour: {r: 1, g: 0, b: 0, a: 0}
-  index: 1
+  TTS: {fileID: 0}
+  actionChoices:
+  - dialogueIndex: 1
+    nextDialogueIndexes: 02000000

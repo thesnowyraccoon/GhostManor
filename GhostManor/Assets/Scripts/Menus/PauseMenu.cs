@@ -11,8 +11,8 @@ public class PauseMenu : MonoBehaviour
 {
     [Header("Pause")]
     public GameObject pauseMenu;
-    Animator pauseAnimation;
-    bool isPlaying = false;
+    //Animator pauseAnimation;
+    //bool isPlaying = false;
 
     public GameObject hotbarSlots;
     public GameObject dialogueBox;
@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        pauseAnimation = GetComponent<Animator>();
+        //pauseAnimation = GetComponent<Animator>();
     }
 
     public void PauseGame()
@@ -44,16 +44,16 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
         dialogueBox.SetActive(false);
 
-        if (!isPlaying)
-        {
-            isPlaying = true;
-            pauseAnimation.SetBool("open", isPlaying);
-        }
-        else
-        {
-            isPlaying = false;
-            pauseAnimation.SetBool("open", isPlaying);
-        }
+        // if (!isPlaying)
+        // {
+        //     isPlaying = true;
+        //     pauseAnimation.SetBool("open", isPlaying);
+        // }
+        // else
+        // {
+        //     isPlaying = false;
+        //     pauseAnimation.SetBool("open", isPlaying);
+        // }
         
     }
 

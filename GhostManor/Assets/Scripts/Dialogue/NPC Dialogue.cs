@@ -12,4 +12,16 @@ public class NPCDialogue : ScriptableObject
     public string charName;
     public string[] dialogue; //actaul words
     public Color textColour;
+    public AudioClip TTS;
+
+    public DialogueState[] actionChoices;
 }
+
+[System.Serializable]
+public class DialogueState //"options"
+{
+    public int dialogueIndex;
+    //No responses but rather depends on actions
+    public int[] nextDialogueIndexes;
+}
+
