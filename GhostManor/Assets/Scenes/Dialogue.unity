@@ -488,6 +488,7 @@ MonoBehaviour:
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
   dialoguePanel: {fileID: 979183550}
+  hotbarSlots: {fileID: 0}
   textSpeed: 0.02
 --- !u!1 &214832980
 GameObject:
@@ -1222,6 +1223,7 @@ MonoBehaviour:
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
   dialoguePanel: {fileID: 979183550}
+  hotbarSlots: {fileID: 0}
   textSpeed: 0.02
 --- !u!1 &979183550
 GameObject:
@@ -1662,7 +1664,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1163678990}
+  hotbarSlots: {fileID: 0}
   dialogueBox: {fileID: 979183550}
+  controlsMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!1 &1181347540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,12 +1843,15 @@ MonoBehaviour:
   jumpHeight: 1.5
   cameraTransform: {fileID: 90546813}
   lookSensitivity: 2
+  sensitivity: {fileID: 0}
   verticalLookLimit: 90
   crouchHeight: 1
   standHeight: 2
   crouchSpeed: 2.5
   pickupRange: 3
   holdPoint: {fileID: 0}
+  heldObject: {fileID: 0}
+  hotbar: {fileID: 0}
 --- !u!114 &1193377579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2724,7 +2732,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d866d2b2519d3b1498f9d7815e1ea3fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
