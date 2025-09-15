@@ -5,6 +5,7 @@ public class CompareObjects : IInteractable
     public FPController player;
     public Item objectType;
     public GameObject Npc;
+
     
     public override void Interact()
     {
@@ -21,6 +22,7 @@ public class CompareObjects : IInteractable
         }
         else
         {
+            
             Debug.Log("Wrong");
         }
     }
