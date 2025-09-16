@@ -24,6 +24,7 @@ public class Dialogue : IInteractable
     public float textSpeed = 0.02f;
     public static bool isDialogueActive;
     private int index; //to track what line is what
+    public static bool isReceiving = false;
 
     public override void Interact()
     {
@@ -60,7 +61,7 @@ public class Dialogue : IInteractable
 
     void NextLine() //continues the dialogue
     {
-        if (index < dialogueData.dialogue.Length -1)
+        if (index < dialogueData.dialogue.Length - 1)
         {
             index++;
             newText.text = string.Empty;
@@ -75,6 +76,7 @@ public class Dialogue : IInteractable
             dialoguePanel.SetActive(false);
             hotbarSlots.SetActive(true);
             isDialogueActive = false;
+            isReceiving = true;
         }
     }
 

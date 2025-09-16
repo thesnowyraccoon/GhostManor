@@ -6,10 +6,11 @@ public class CompareObjects : IInteractable
     public Item objectType;
     public GameObject Npc;
 
-    
+
     public override void Interact()
     {
-        CheckHands();
+        if (Dialogue.isReceiving)
+            CheckHands();
     }
 
     void CheckHands()
@@ -22,8 +23,8 @@ public class CompareObjects : IInteractable
         }
         else
         {
-            
-            Debug.Log("Wrong");
+            //play particle, throw object
+            //Debug.Log("Wrong");
         }
     }
 }
