@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.InputSystem;
+using Unity.Entities.UniversalDelegates;
 
 // 5 Minute DIALOGUE SYSTEM in UNITY Tutorial
 // BMo
@@ -18,6 +19,7 @@ public class Dialogue : IInteractable
     public TextMeshProUGUI infoText; //correaltes to the keybind
     public TextMeshProUGUI nameText; //display characters name
     public GameObject dialoguePanel;
+
     public GameObject hotbarSlots;
     public float textSpeed = 0.02f;
     public static bool isDialogueActive;
@@ -47,7 +49,9 @@ public class Dialogue : IInteractable
 
     IEnumerator TypeLine() //This gives the typing effect
     {
-        foreach (char c in dialogueData.dialogue[index].ToCharArray())
+        // newText.SetText("");
+
+        foreach (char c in dialogueData.dialogue[index].ToCharArray()) 
         {
             newText.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -62,6 +66,10 @@ public class Dialogue : IInteractable
             newText.text = string.Empty;
             StartCoroutine(TypeLine());
         }
+        // if (++index < dialogueData.dialogue.Length)
+        // {
+        //     StartCoroutine(TypeLine());
+        // }
         else
         {
             dialoguePanel.SetActive(false);
@@ -74,9 +82,11 @@ public class Dialogue : IInteractable
     {
         if (context.performed)
         {
+            
             if (newText.text == dialogueData.dialogue[index])
             {
                 NextLine();
+
             }
             else
             {

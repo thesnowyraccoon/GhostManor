@@ -488,7 +488,7 @@ MonoBehaviour:
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
   dialoguePanel: {fileID: 979183550}
-  hotbarSlots: {fileID: 0}
+  hotbarSlots: {fileID: 1945249262}
   textSpeed: 0.02
 --- !u!1 &214832980
 GameObject:
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space to continue
+  m_text: Enter to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
   dialoguePanel: {fileID: 979183550}
-  hotbarSlots: {fileID: 0}
+  hotbarSlots: {fileID: 1945249262}
   textSpeed: 0.02
 --- !u!1 &979183550
 GameObject:
@@ -2019,8 +2019,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 745069703}
+        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
+        m_MethodName: OnDialogue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6119ba04-20dc-4c6c-8824-30b4ddcc568a
     m_ActionName: 'Player/ContDialogue[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6ce6f25c-0663-4c3a-8e42-809c07df56e3
+    m_ActionName: 'Player/Slot 1[/Keyboard/1]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bc42c4f3-9202-4606-aeee-ea6a23cac4d2
+    m_ActionName: 'Player/Slot 2[/Keyboard/2]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b6fe3012-17c5-47f6-be2d-4682b07f7484
+    m_ActionName: 'Player/Slot 3[/Keyboard/3]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 38ab10a7-3a71-4161-b084-bc7d4b46c144
+    m_ActionName: 'Player/Hand[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -3923,6 +3951,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1945249262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945249263}
+  m_Layer: 0
+  m_Name: hbs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1945249263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945249262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.341027, y: 5.981389, z: -2.5706406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003918354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,3 +4105,4 @@ SceneRoots:
   - {fileID: 2003918357}
   - {fileID: 2015536625}
   - {fileID: 1875465534}
+  - {fileID: 1945249263}
