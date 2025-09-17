@@ -13,6 +13,7 @@ using Unity.Entities.UniversalDelegates;
 
 public class Dialogue : IInteractable
 {
+    [Header ("INFO")]
     public NPCDialogue dialogueData; //accesses the data
     public GameObject NPC; //the 'sprite'
     public TextMeshProUGUI newText; //TMP asset
@@ -25,6 +26,10 @@ public class Dialogue : IInteractable
     public static bool isDialogueActive;
     private int index; //to track what line is what
     public static bool isReceiving = false;
+
+
+    private enum QuestState { NotStarted, InProgress, Completed }
+    private QuestState questState = QuestState.NotStarted;
 
     public override void Interact()
     {
@@ -43,16 +48,47 @@ public class Dialogue : IInteractable
         newText.text = string.Empty;
         //newText.color = dialogueData.textColour; will fix this in final
         nameText.SetText(dialogueData.charName);
-        index = 0;
         StartCoroutine(TypeLine());
         isDialogueActive = true;
+
+        DisplayCurrentLine();
+
+        //Quests
+        SyncQuestState();
+
+        if (questState == QuestState.NotStarted)
+        {
+            index = 0;
+        }
+        else if (questState == QuestState.InProgress)
+        {
+            index = dialogueData.questInProgressIndex;
+        }
+        else if (questState == QuestState.Completed)
+        {
+            index = dialogueData.questCompletedIndex;
+        }
+    }
+
+    private void SyncQuestState()
+    {
+        if (dialogueData.quests == null) return;
+        string questID = dialogueData.quests.questID;
+        if (QuestController.Instance.IsQuestActive(questID))
+        {
+            questState = QuestState.InProgress;
+        }
+        else
+        {
+            questState = QuestState.NotStarted;
+        }
     }
 
     IEnumerator TypeLine() //This gives the typing effect
     {
         // newText.SetText("");
 
-        foreach (char c in dialogueData.dialogue[index].ToCharArray()) 
+        foreach (char c in dialogueData.dialogue[index].ToCharArray())
         {
             newText.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -71,12 +107,14 @@ public class Dialogue : IInteractable
         // {
         //     StartCoroutine(TypeLine());
         // }
-        else
+        
+        if (dialogueData.endDialogueLines.Length > index && dialogueData.endDialogueLines[index])
         {
             dialoguePanel.SetActive(false);
             hotbarSlots.SetActive(true);
             isDialogueActive = false;
             isReceiving = true;
+            return;
         }
     }
 
@@ -84,7 +122,7 @@ public class Dialogue : IInteractable
     {
         if (context.performed)
         {
-            
+
             if (newText.text == dialogueData.dialogue[index])
             {
                 NextLine();
@@ -100,5 +138,11 @@ public class Dialogue : IInteractable
         {
             infoText.text = context.control.name + " to continue";
         }
+    }
+
+    void DisplayCurrentLine()
+    {
+        StopAllCoroutines();
+        StartCoroutine(TypeLine());
     }
 }

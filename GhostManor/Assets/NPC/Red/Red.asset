@@ -17,8 +17,15 @@ MonoBehaviour:
   - This is a test
   - miaw miaw miaw
   - thanks!
+  - wah
+  - I have another
+  endDialogueLines: 0000010101
   textColour: {r: 1, g: 0, b: 0, a: 0}
   TTS: {fileID: 0}
   actionChoices:
-  - dialogueIndex: 1
-    nextDialogueIndexes: 02000000
+  - dialogueIndex: 2
+    nextDialogueIndexes: 03000000
+    givesQuest: 01
+  questInProgressIndex: 3
+  questCompletedIndex: 4
+  quests: {fileID: 11400000, guid: 6856b044ee9101d47b231e83ef82b303, type: 2}
