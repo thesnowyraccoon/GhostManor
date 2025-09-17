@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CompareObjects : IInteractable
 {
+    [SerializeField] private ParticleSystem flames;
     public FPController player;
     public Item objectType;
     public GameObject Npc;
@@ -22,7 +23,7 @@ public class CompareObjects : IInteractable
         }
         else
         {
-            
+            flames.Play(); 
             Debug.Log("Wrong");
         }
     }
