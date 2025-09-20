@@ -3,6 +3,7 @@ using UnityEngine;
 public class CompareObjects : IInteractable
 {
     [SerializeField] private ParticleSystem flames;
+    [SerializeField] private ParticleSystem stars;
     public FPController player;
     public Item objectType;
     public GameObject Npc;
@@ -18,6 +19,7 @@ public class CompareObjects : IInteractable
         // What object does the player have in there hands
         if (objectType == player.heldObject)
         {
+            stars.Play();
             Destroy(gameObject);
             Destroy(player.heldObject.gameObject);
         }
