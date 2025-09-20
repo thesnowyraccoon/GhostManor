@@ -7,20 +7,21 @@ public class ItemUI : MonoBehaviour
     public float pickupRange = 3f;
     [SerializeField] private Transform cameraTransform;
 
+    ItemOutline lastItem = null;
+
     void Start()
     {
         //set shader false
         reticleActive.SetActive(false);
         reticle.SetActive(true);
-        
     }
-        void Update()
+
+    void Update()
     {
-         Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
         {
-
             if (hit.collider.CompareTag("Item"))
             {
                 //set shader true
@@ -33,13 +34,20 @@ public class ItemUI : MonoBehaviour
                 {
                     switcher.ToggleOutline();
                 }
+
+                lastItem = hit.collider.GetComponent<ItemOutline>();
             }
             else
             {
                 reticleActive.SetActive(false);
                 reticle.SetActive(true);
-            }
 
+                if (lastItem != null)
+                {
+                    lastItem.DisableOutline();
+                    lastItem = null;
+                }
+            }
         }
     }
 }
