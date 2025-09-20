@@ -21,6 +21,7 @@ public class Notes : IInteractable
         }
         else
         {
+            
             hotBar.SetActive(false);
             note.SetActive(false);
             isReading = false;

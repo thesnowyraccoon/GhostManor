@@ -26,7 +26,7 @@ public class ItemUI : MonoBehaviour
                 //set shader true
                 reticleActive.SetActive(true);
                 reticle.SetActive(false);
-                Debug.Log("Yep thats an item");
+                //Debug.Log("Yep thats an item");
 
                 var switcher = hit.collider.GetComponent<ItemOutline>();
                 if (switcher != null)
@@ -37,6 +37,7 @@ public class ItemUI : MonoBehaviour
             else
             {
                 reticleActive.SetActive(false);
+                reticle.SetActive(true);
             }
 
         }
