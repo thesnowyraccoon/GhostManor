@@ -3,6 +3,7 @@ using UnityEngine;
 public class ItemUI : MonoBehaviour
 {
     public GameObject reticleActive;
+    public GameObject reticle;
     public float pickupRange = 3f;
     [SerializeField] private Transform cameraTransform;
 
@@ -10,6 +11,8 @@ public class ItemUI : MonoBehaviour
     {
         //set shader false
         reticleActive.SetActive(false);
+        reticle.SetActive(true);
+        
     }
         void Update()
     {
@@ -22,6 +25,7 @@ public class ItemUI : MonoBehaviour
             {
                 //set shader true
                 reticleActive.SetActive(true);
+                reticle.SetActive(false);
                 Debug.Log("Yep thats an item");
 
                 var switcher = hit.collider.GetComponent<ItemOutline>();
