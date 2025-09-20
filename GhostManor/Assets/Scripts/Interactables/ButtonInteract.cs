@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class ButtonInteract : IInteractable
+public class ButtonInteract : MonoBehaviour, IInteractable
 {
     Animator animator;
 
     public GameObject gameobject;
 
-    public override void Interact()
+    public void Interact()
     {
         animator.SetBool("Pressed", true);
     }

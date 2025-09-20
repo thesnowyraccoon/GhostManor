@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Notes : IInteractable
+public class Notes : MonoBehaviour, IInteractable
 {
     public GameObject note;
     public GameObject hotBar;
@@ -10,7 +10,7 @@ public class Notes : IInteractable
     {
         note.SetActive(false);
     }
-    public override void Interact()
+    public void Interact()
     {
         if (!isReading)
         {

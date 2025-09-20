@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class CompareObjects : IInteractable
+public class CompareObjects : MonoBehaviour, IInteractable
 {
     public FPController player;
     public Item objectType;
     public GameObject Npc;
 
 
-    public override void Interact()
+    public void Interact()
     {
         if (Dialogue.isReceiving)
             CheckHands();

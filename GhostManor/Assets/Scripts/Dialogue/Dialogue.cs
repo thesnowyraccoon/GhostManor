@@ -2,7 +2,6 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.InputSystem;
-using Unity.Entities.UniversalDelegates;
 
 // 5 Minute DIALOGUE SYSTEM in UNITY Tutorial
 // BMo
@@ -10,10 +9,9 @@ using Unity.Entities.UniversalDelegates;
 // Code Version: Unknown
 // Available at https://youtu.be/8oTYabhj248?si=Y4JJXjdaxYVkIulq
 
-
-public class Dialogue : IInteractable
+public class Dialogue : MonoBehaviour, IInteractable
 {
-    [Header ("INFO")]
+    [Header("INFO")]
     public NPCDialogue dialogueData; //accesses the data
     public GameObject NPC; //the 'sprite'
     public TextMeshProUGUI newText; //TMP asset
@@ -31,7 +29,7 @@ public class Dialogue : IInteractable
     private enum QuestState { NotStarted, InProgress, Completed }
     private QuestState questState = QuestState.NotStarted;
 
-    public override void Interact()
+    public void Interact()
     {
         StartDialogue();
     }
@@ -43,12 +41,14 @@ public class Dialogue : IInteractable
 
     void StartDialogue()
     {
+        index = 0;
+
         dialoguePanel.SetActive(true);
         hotbarSlots.SetActive(false);
         newText.text = string.Empty;
         //newText.color = dialogueData.textColour; will fix this in final
         nameText.SetText(dialogueData.charName);
-        StartCoroutine(TypeLine());
+        //StartCoroutine(TypeLine());
         isDialogueActive = true;
 
         DisplayCurrentLine();
@@ -107,7 +107,7 @@ public class Dialogue : IInteractable
         // {
         //     StartCoroutine(TypeLine());
         // }
-        
+
         if (dialogueData.endDialogueLines.Length > index && dialogueData.endDialogueLines[index])
         {
             dialoguePanel.SetActive(false);
@@ -122,17 +122,17 @@ public class Dialogue : IInteractable
     {
         if (context.performed)
         {
+            // if (newText.text == dialogueData.dialogue[index])
+            // {
+            //     NextLine();
+            // }
+            // else
+            // {
+            //     StopAllCoroutines();
+            //     newText.text = dialogueData.dialogue[index]; //and then go to the next line
+            // }
 
-            if (newText.text == dialogueData.dialogue[index])
-            {
-                NextLine();
-
-            }
-            else
-            {
-                StopAllCoroutines();
-                newText.text = dialogueData.dialogue[index]; //and then go to the next line
-            }
+            NextLine();
         }
         if (!context.performed)
         {

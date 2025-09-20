@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class DoorInteract : IInteractable
+public class DoorInteract : MonoBehaviour, IInteractable
 {
     Animator animator;
 
     bool isOpened = false;
 
-    public override void Interact()
+    public void Interact()
     {
         if (!isOpened)
         {

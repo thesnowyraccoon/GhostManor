@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Hide : IInteractable 
+public class Hide : MonoBehaviour, IInteractable 
 {
     private FPController playerController;
     private CharacterController controller;
@@ -17,7 +17,7 @@ public class Hide : IInteractable
         
     }
 
-    public override void Interact()
+    public void Interact()
     {
 
         if (!isHiding)
