@@ -21,7 +21,8 @@ public class Notes : MonoBehaviour, IInteractable
         }
         else
         {
-            hotBar.SetActive(false);
+            
+            hotBar.SetActive(true);
             note.SetActive(false);
             isReading = false;
             SoundManager.Play("Paper");

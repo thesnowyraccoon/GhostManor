@@ -31,6 +31,7 @@ public class FPController : MonoBehaviour
 
     public Transform holdPoint;
     public Item heldObject;
+    
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -41,6 +42,7 @@ public class FPController : MonoBehaviour
     [Header("Inventory Settings")]
     public HotbarController hotbar;
 
+    
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -140,6 +142,7 @@ public class FPController : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
         {
+
             if (hit.collider.CompareTag("Item"))
             {
                 Item pickUp = hit.collider.GetComponent<Item>();
@@ -163,6 +166,7 @@ public class FPController : MonoBehaviour
                 }
             }
         }
+        
     }
 
     public void OnDrop(InputAction.CallbackContext context)
