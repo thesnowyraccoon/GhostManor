@@ -23,6 +23,8 @@ public class PauseMenu : MonoBehaviour
     [Header("Settings")]
     public GameObject settingsMenu;
     
+    [Header("Quests")]
+    public GameObject questsMenu;
     
     public static bool isPaused;
 
@@ -31,11 +33,12 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        //pauseAnimation = GetComponent<Animator>();
+        questsMenu.SetActive(false);
     }
 
     public void PauseGame()
     {
+        questsMenu.SetActive(false);
         controlsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         hotbarSlots.SetActive(false);
@@ -43,17 +46,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         dialogueBox.SetActive(false);
-
-        // if (!isPlaying)
-        // {
-        //     isPlaying = true;
-        //     pauseAnimation.SetBool("open", isPlaying);
-        // }
-        // else
-        // {
-        //     isPlaying = false;
-        //     pauseAnimation.SetBool("open", isPlaying);
-        // }
         
     }
 
@@ -82,6 +74,12 @@ public class PauseMenu : MonoBehaviour
          Time.timeScale = 0f;
         dialogueBox.SetActive(false);
         isPaused = true;
+    }
+
+    public void Quests()
+    {
+        questsMenu.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
     public void Back()
