@@ -38,7 +38,7 @@ public class PauseMenu : MonoBehaviour
     {
         controlsMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        hotbarSlots.SetActive(false);
+        //hotbarSlots.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -54,7 +54,6 @@ public class PauseMenu : MonoBehaviour
         //     isPlaying = false;
         //     pauseAnimation.SetBool("open", isPlaying);
         // }
-        
     }
 
     public void ResumeGame()
@@ -108,7 +107,5 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-
-
 }
 

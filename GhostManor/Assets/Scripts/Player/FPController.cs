@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class FPController : MonoBehaviour
@@ -15,8 +16,10 @@ public class FPController : MonoBehaviour
     [Header("Look Settings")]
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float lookSensitivity = 2f;
-    [SerializeField] private Slider sensitivity; 
+    [SerializeField] private Slider sensitivity;
     [SerializeField] private float verticalLookLimit = 90f;
+
+    private float currentSensitivity;
 
     [Header("Crouch Settings")]
     [SerializeField] float crouchHeight = 1f;
@@ -41,7 +44,9 @@ public class FPController : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+
         currentSpeed = moveSpeed;
+        currentSensitivity = lookSensitivity;
     }
 
     private void Update()
@@ -49,34 +54,17 @@ public class FPController : MonoBehaviour
         HandleMovement();
         HandleLook();
         HandlePickup();
-
-        if (!PauseMenu.isPaused)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        HandlePause();
     }
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        if (!Dialogue.isDialogueActive)
-        {
-            moveInput = context.ReadValue<Vector2>();
-        }
-       
+        moveInput = context.ReadValue<Vector2>();
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (!PauseMenu.isPaused)
-        {
-            lookInput = context.ReadValue<Vector2>();
-        }
+        lookInput = context.ReadValue<Vector2>();
     }
 
     public void HandleMovement()
@@ -93,8 +81,8 @@ public class FPController : MonoBehaviour
 
     public void HandleLook()
     {
-        float mouseX = lookInput.x * lookSensitivity / 10;
-        float mouseY = lookInput.y * lookSensitivity / 10;
+        float mouseX = lookInput.x * currentSensitivity / 10;
+        float mouseY = lookInput.y * currentSensitivity / 10;
 
         verticalRotation -= mouseY;
         verticalRotation = Mathf.Clamp(verticalRotation, -verticalLookLimit, verticalLookLimit);
@@ -104,12 +92,9 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (!Dialogue.isDialogueActive)
+        if (context.performed && controller.isGrounded)
         {
-          if (context.performed && controller.isGrounded)
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            }  
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
 
@@ -133,7 +118,7 @@ public class FPController : MonoBehaviour
         {
             currentSpeed = sprintSpeed;
         }
-        else
+        else if (context.canceled)
         {
             currentSpeed = moveSpeed;
         }
@@ -190,6 +175,8 @@ public class FPController : MonoBehaviour
 
             heldObject.Drop();
             heldObject = null;
+
+            hotbar.RebuildHotbar();
         }
     }
 
@@ -207,6 +194,30 @@ public class FPController : MonoBehaviour
             {
                 interactable.Interact();
             }
+        }
+    }
+
+    public void HandlePause()
+    {
+        if (PauseController.isPaused)
+        {
+            Time.timeScale = 0f;
+
+            //currentSpeed = 0f;
+            currentSensitivity = 0f;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+
+            //currentSpeed = moveSpeed;
+            currentSensitivity = lookSensitivity;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }

@@ -32,8 +32,6 @@ public class HotbarController : MonoBehaviour
             {
                 if (item == slot.currentItem)
                 {
-                    Debug.Log("test");
-
                     slot.currentItem = null;
 
                     return;
@@ -52,10 +50,9 @@ public class HotbarController : MonoBehaviour
             }
         }
 
-        Item heldItem = player.holdPoint.GetChild(index).GetComponent<Item>();
+        if (player.holdPoint.GetChild(index).TryGetComponent<Item>(out var heldItem))
+            heldItem.gameObject.SetActive(true);
 
-        if (heldItem != null) heldItem.gameObject.SetActive(true);
-            
         player.heldObject = heldItem;
     }
 
@@ -90,5 +87,23 @@ public class HotbarController : MonoBehaviour
         }
 
         player.heldObject = null;
+    }
+
+    public void RebuildHotbar()
+    {
+        foreach (Transform slotTransform in hotBarPanel.transform)
+        {
+            HotbarSlot slot = slotTransform.GetComponent<HotbarSlot>();
+
+            if (slot != null && slot.currentItem != null)
+            {
+                slot.currentItem = null;
+            }
+        }
+
+        foreach (Transform item in player.holdPoint)
+        {
+            AddItem(item.gameObject);
+        }
     }
 }

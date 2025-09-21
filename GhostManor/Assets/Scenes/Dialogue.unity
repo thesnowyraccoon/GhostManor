@@ -488,8 +488,10 @@ MonoBehaviour:
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
   dialoguePanel: {fileID: 979183550}
-  hotbarSlots: {fileID: 1945249262}
+  hotbarSlots: {fileID: 0}
   textSpeed: 0.02
+  index: 0
+  questState: 0
 --- !u!1 &214832980
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +960,63 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &491508031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 491508032}
+  - component: {fileID: 491508033}
+  - component: {fileID: 491508034}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &491508032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491508031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491508033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491508031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e747372b26fe1459bc68c029a50c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &491508034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491508031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1823d515482d13f40a8ac6a7093fce25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &518471552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,8 +1282,10 @@ MonoBehaviour:
   infoText: {fileID: 518471554}
   nameText: {fileID: 214832982}
   dialoguePanel: {fileID: 979183550}
-  hotbarSlots: {fileID: 1945249262}
+  hotbarSlots: {fileID: 0}
   textSpeed: 0.02
+  index: 0
+  questState: 0
 --- !u!1 &979183550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,8 +1447,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1163678994}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1875465535}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1583,14 +1644,13 @@ GameObject:
   - component: {fileID: 1163678991}
   - component: {fileID: 1163678993}
   - component: {fileID: 1163678992}
-  - component: {fileID: 1163678994}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1163678991
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1651,23 +1711,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163678990}
   m_CullTransparentMesh: 1
---- !u!114 &1163678994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163678990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a898e68484bd3d04ea2923f75ec9cb6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1163678990}
-  hotbarSlots: {fileID: 0}
-  dialogueBox: {fileID: 979183550}
-  controlsMenu: {fileID: 0}
-  settingsMenu: {fileID: 0}
 --- !u!1 &1181347540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,13 +2029,25 @@ MonoBehaviour:
     m_ActionId: 53bc4592-5711-46ad-90d8-28fbed3588e2
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1193377578}
+        m_TargetAssemblyTypeName: FPController, Assembly-CSharp
+        m_MethodName: OnDrop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5eaeabc6-ab1f-43b8-974f-f5fb9e92cc32
     m_ActionName: 'Player/Drop[/Keyboard/q]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1163678994}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1875465535}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: OnPause
         m_Mode: 0
         m_Arguments:
@@ -2534,8 +2589,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1163678994}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1875465535}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -2596,8 +2651,9 @@ GameObject:
   - component: {fileID: 1875465533}
   - component: {fileID: 1875465532}
   - component: {fileID: 1875465531}
+  - component: {fileID: 1875465535}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2686,6 +2742,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1875465535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875465530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8111745f195f1a445a8b5905d1864609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCanvas: {fileID: 1163678990}
+  menus:
+  - {fileID: 1163678990}
+  buttons: []
+  hotbarSlots: {fileID: 0}
 --- !u!1 &1885832758
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,37 +4024,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1945249262
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1945249263}
-  m_Layer: 0
-  m_Name: hbs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1945249263
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945249262}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.341027, y: 5.981389, z: -2.5706406}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003918354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4105,4 +4147,4 @@ SceneRoots:
   - {fileID: 2003918357}
   - {fileID: 2015536625}
   - {fileID: 1875465534}
-  - {fileID: 1945249263}
+  - {fileID: 491508032}
