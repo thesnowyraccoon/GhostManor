@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02122836f03d4b45aa9326ad406f54d, type: 3}
   m_Name: TestBlue
   m_EditorClassIdentifier: 
-  npcName: Blue
+  npcName: Deer
   dialogueLines:
-  - Testing
-  - Wah
-  - I am Blue
-  autoProgressLines: 010000
-  endDialogueLines: 000001
+  - Welcome to my masters Manor
+  - I do apologise for the inconvience of the ghosts
+  - after many years they have become a bit frustrated
+  - You can help free us... if youre up for that task
+  - You have to bring the ghosts an item they relate to (more to come in the future)
+  - Like I lost my Wallet, bring that to me and Ill be out of your way
+  autoProgressLines: 000100000101
+  endDialogueLines: 000000000001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   objInProgressIndex: 0
   objCompletedIndex: 0
   objective: {fileID: 0}
-  givesQuest: 
+  givesObjective: 
