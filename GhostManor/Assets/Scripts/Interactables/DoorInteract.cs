@@ -12,11 +12,13 @@ public class DoorInteract : MonoBehaviour, IInteractable
         {
             isOpened = true;
             animator.SetBool("Opened", isOpened);
+            SoundManager.Play("DoorOpen");
         }
         else
         {
             isOpened = false;
             animator.SetBool("Opened", isOpened);
+            SoundManager.Play("DoorOpen");
         }
     }
 
