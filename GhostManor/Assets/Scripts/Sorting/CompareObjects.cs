@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class CompareObjects : MonoBehaviour
 {
-    //public ParticleSystem flames;
-    //public ParticleSystem stars;
+    public ParticleSystem flames;
+    public ParticleSystem stars;
     public FPController player;
     public Item objectType;
     public NPC npc;
 
     void CheckHands()
     {
-        //stars.Play();
+        stars.Play();
         Destroy(player.heldObject.gameObject);
 
         // // What object does the player have in there hands
@@ -34,12 +34,12 @@ public class CompareObjects : MonoBehaviour
 
             return 0;
         }
-        else if (objectType != null && objectType != player.heldObject)
+        else if (player.heldObject != null && objectType != player.heldObject)
         {
-            //flames.Play();
+            flames.Play();
             return 1;
         }
-        else if (objectType == null)
+        else if (player.heldObject == null)
         {
             Debug.Log("Hands Empty");
             return 2;

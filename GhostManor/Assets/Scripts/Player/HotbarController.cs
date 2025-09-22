@@ -44,6 +44,8 @@ public class HotbarController : MonoBehaviour
     {
         if (player.heldObject != null)
         {
+            player.heldObject = null;
+
             foreach (Transform item in player.holdPoint)
             {
                 item.gameObject.SetActive(false);
