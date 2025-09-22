@@ -15,8 +15,7 @@ public class FPController : MonoBehaviour
 
     [Header("Look Settings")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float lookSensitivity = 2f;
-    [SerializeField] private Slider sensitivity;
+    [SerializeField] private float lookSensitivity = 20f;
     [SerializeField] private float verticalLookLimit = 90f;
 
     private float currentSensitivity;
@@ -83,13 +82,18 @@ public class FPController : MonoBehaviour
 
     public void HandleLook()
     {
-        float mouseX = lookInput.x * currentSensitivity / 10;
-        float mouseY = lookInput.y * currentSensitivity / 10;
+        float mouseX = lookInput.x * currentSensitivity / 100;
+        float mouseY = lookInput.y * currentSensitivity / 100;
 
         verticalRotation -= mouseY;
         verticalRotation = Mathf.Clamp(verticalRotation, -verticalLookLimit, verticalLookLimit);
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+    }
+
+    public void SetLookSensivity(float sensitivity)
+    {
+        lookSensitivity = sensitivity;
     }
 
     public void OnJump(InputAction.CallbackContext context)

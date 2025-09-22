@@ -1193,6 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 7156154938a57664faaf1303cee4366a, type: 2}
+  compare: {fileID: 0}
 --- !u!1 &214832980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2989,13 +2990,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 294400661}
   m_HandleRect: {fileID: 638494208}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MinValue: 10
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1875465535}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: SensitivitySlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &638494207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,6 +3438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 22102fc71e8c8ad45ab60de0f7786d48, type: 2}
+  compare: {fileID: 0}
 --- !u!1 &748499295
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,8 +4611,7 @@ MonoBehaviour:
   gravity: -39.24
   jumpHeight: 1.5
   cameraTransform: {fileID: 90546813}
-  lookSensitivity: 2
-  sensitivity: {fileID: 0}
+  lookSensitivity: 20
   verticalLookLimit: 90
   crouchHeight: 1
   standHeight: 2
@@ -6419,6 +6432,8 @@ MonoBehaviour:
   - {fileID: 220136635}
   - {fileID: 148401889}
   hotbarSlots: {fileID: 0}
+  lookSlider: {fileID: 624725880}
+  player: {fileID: 1193377578}
 --- !u!1 &1885832758
 GameObject:
   m_ObjectHideFlags: 0

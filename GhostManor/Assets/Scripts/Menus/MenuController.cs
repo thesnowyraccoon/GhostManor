@@ -18,6 +18,8 @@ public class MenuController : MonoBehaviour
     public Button[] buttons;
 
     public GameObject hotbarSlots;
+    public Slider lookSlider;
+    public FPController player;
 
     void Start()
     {
@@ -73,5 +75,10 @@ public class MenuController : MonoBehaviour
     public void Back()
     {
         ActivateMenu(0);
+    }
+
+    public void SensitivitySlider()
+    {
+        player.SetLookSensivity(lookSlider.value);
     }
 }

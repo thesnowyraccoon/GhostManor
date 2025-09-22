@@ -16,8 +16,13 @@ public class NPC : MonoBehaviour, IInteractable
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
 
-    private enum ObjectiveState { NotStarted, InProgress, Completed }
-    private ObjectiveState objectiveState = ObjectiveState.NotStarted;
+    public CompareObjects compare;
+
+    private enum CompareState { Correct, Incorrect, NotComparing }
+    private CompareState compareState = CompareState.NotComparing;
+
+    // private enum ObjectiveState { NotStarted, InProgress, Completed }
+    // private ObjectiveState objectiveState = ObjectiveState.NotStarted;
 
     void Start()
     {
@@ -48,19 +53,34 @@ public class NPC : MonoBehaviour, IInteractable
 
     void StartDialogue()
     {
-        SyncObjectiveState();
+        // SyncObjectiveState();
 
-        if (objectiveState == ObjectiveState.NotStarted)
+        // if (objectiveState == ObjectiveState.NotStarted)
+        // {
+        //     dialogueIndex = 0;
+        // }
+        // else if (objectiveState == ObjectiveState.InProgress)
+        // {
+        //     dialogueIndex = dialogueData.objInProgressIndex;
+        // }
+        // else if (objectiveState == ObjectiveState.Completed)
+        // {
+        //     dialogueIndex = dialogueData.objCompletedIndex;
+        // }
+
+        SyncCompareState();
+
+        if (compareState == CompareState.NotComparing)
         {
             dialogueIndex = 0;
         }
-        else if (objectiveState == ObjectiveState.InProgress)
+        else if (compareState == CompareState.Incorrect)
         {
-            dialogueIndex = dialogueData.objInProgressIndex;
+            dialogueIndex = dialogueData.incorrectItemIndex;
         }
-        else if (objectiveState == ObjectiveState.Completed)
+        else if (compareState == CompareState.Correct)
         {
-            dialogueIndex = dialogueData.objCompletedIndex;
+            dialogueIndex = dialogueData.correctItemIndex;
         }
 
         isDialogueActive = true;
@@ -73,25 +93,41 @@ public class NPC : MonoBehaviour, IInteractable
         DisplayCurrentLine();
     }
 
-    private void SyncObjectiveState()
+    private void SyncCompareState()
     {
-        if (dialogueData.objective == null) return;
-
-        string objectiveID = dialogueData.objective.objectiveID;
-
-        if (ObjectiveController.Instance.IsObjCompleted(objectiveID) || ObjectiveController.Instance.isObjHandedIn(objectiveID))
+        if (compare.IsComparing() == 0)
         {
-            objectiveState = ObjectiveState.Completed;
+            compareState = CompareState.Correct;
         }
-        else if (ObjectiveController.Instance.IsObjActive(objectiveID))
+        else if (compare.IsComparing() == 1)
         {
-            objectiveState = ObjectiveState.InProgress;
+            compareState = CompareState.Incorrect;
         }
-        else
+        else if (compare.IsComparing() == 2)
         {
-            objectiveState = ObjectiveState.NotStarted;
+            compareState = CompareState.NotComparing;
         }
     }
+
+    // private void SyncObjectiveState()
+    // {
+    //     if (dialogueData.objective == null) return;
+
+    //     string objectiveID = dialogueData.objective.objectiveID;
+
+    //     if (ObjectiveController.Instance.IsObjCompleted(objectiveID) || ObjectiveController.Instance.isObjHandedIn(objectiveID))
+    //     {
+    //         objectiveState = ObjectiveState.Completed;
+    //     }
+    //     else if (ObjectiveController.Instance.IsObjActive(objectiveID))
+    //     {
+    //         objectiveState = ObjectiveState.InProgress;
+    //     }
+    //     else
+    //     {
+    //         objectiveState = ObjectiveState.NotStarted;
+    //     }
+    // }
 
     void NextLine()
     {
@@ -151,10 +187,10 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void EndDialogue()
     {
-        if (objectiveState == ObjectiveState.Completed && !ObjectiveController.Instance.isObjHandedIn(dialogueData.objective.objectiveID))
-        {
-            HandleobjectiveCompletion(dialogueData.objective);
-        }
+        // if (objectiveState == ObjectiveState.Completed && !ObjectiveController.Instance.isObjHandedIn(dialogueData.objective.objectiveID))
+        // {
+        //     HandleobjectiveCompletion(dialogueData.objective);
+        // }
 
         StopAllCoroutines();
 
@@ -165,8 +201,8 @@ public class NPC : MonoBehaviour, IInteractable
         PauseController.SetPause(false);
     }
 
-    void HandleobjectiveCompletion(Objective objective)
-    {
-        ObjectiveController.Instance.HandInObjective(objective.objectiveID);
-    }
+    // void HandleobjectiveCompletion(Objective objective)
+    // {
+    //     ObjectiveController.Instance.HandInObjective(objective.objectiveID);
+    // }
 }
