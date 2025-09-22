@@ -9,12 +9,12 @@ public class CompareObjects : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        // if (Dialogue.isReceiving)
         //     CheckHands();
     }
 
     // void CheckHands()
     // {
+        
     //     // What object does the player have in there hands
     //     if (objectType == player.heldObject)
     //     {
