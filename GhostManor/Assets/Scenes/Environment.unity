@@ -12512,12 +12512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 390503852}
   Npc: {fileID: 86215743}
-  disappearSpeed: 2
 --- !u!43 &87572388
 Mesh:
   m_ObjectHideFlags: 0
@@ -12808,12 +12805,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 323098721}
   Npc: {fileID: 88040020}
-  disappearSpeed: 2
 --- !u!1 &89019710
 GameObject:
   m_ObjectHideFlags: 0
@@ -72931,11 +72925,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3402817370099209360, guid: f9694607ee6c35e418e553e2df856c73, type: 3}
   m_PrefabInstance: {fileID: 1172428942}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1172428945 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3731230832852954332, guid: f9694607ee6c35e418e553e2df856c73, type: 3}
-  m_PrefabInstance: {fileID: 1172428942}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1177490485
 GameObject:
   m_ObjectHideFlags: 0
@@ -85825,11 +85814,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9606eed0bab9bf40b8b416b7367a811, type: 3}
---- !u!198 &1455492581 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3615861583003675427, guid: d289fd141f910b44b9e4f9fcc3b9543f, type: 3}
-  m_PrefabInstance: {fileID: 375683876}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1457386617
 GameObject:
   m_ObjectHideFlags: 0
@@ -89918,7 +89902,6 @@ MonoBehaviour:
   dialogueBox: {fileID: 376300602}
   controlsMenu: {fileID: 2096869253}
   settingsMenu: {fileID: 1535608697}
-  questsMenu: {fileID: 306327632}
 --- !u!114 &1535551637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98553,12 +98536,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 1461578066}
   Npc: {fileID: 1698445188}
-  disappearSpeed: 2
 --- !u!114 &1698445194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110926,12 +110906,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 1808954917}
   Npc: {fileID: 1922869198}
-  disappearSpeed: 2
 --- !u!43 &1925817938
 Mesh:
   m_ObjectHideFlags: 0
@@ -112782,12 +112759,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 797374960}
   Npc: {fileID: 1973254638}
-  disappearSpeed: 2
 --- !u!1 &1982270786
 GameObject:
   m_ObjectHideFlags: 0
@@ -116034,12 +116008,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 1172428945}
-  stars: {fileID: 1455492581}
   player: {fileID: 1569261697}
   objectType: {fileID: 1921601087}
   Npc: {fileID: 2070962957}
-  disappearSpeed: 2
 --- !u!1 &2075792593
 GameObject:
   m_ObjectHideFlags: 0
