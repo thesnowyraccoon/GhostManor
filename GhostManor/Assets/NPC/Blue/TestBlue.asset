@@ -20,11 +20,11 @@ MonoBehaviour:
   - You can help free us... if youre up for that task
   - You have to bring the ghosts an item they relate to (more to come in the future)
   - Like I lost my Wallet, bring that to me and Ill be out of your way
-  autoProgressLines: 000100000101
-  endDialogueLines: 000000000001
+  - Thats correct!
+  - Not quite
+  autoProgressLines: 0001000001000000
+  endDialogueLines: 0000000000010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  objInProgressIndex: 0
-  objCompletedIndex: 0
-  objective: {fileID: 0}
-  givesObjective: 
+  incorrectItemIndex: 7
+  correctItemIndex: 6

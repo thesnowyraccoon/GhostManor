@@ -18,11 +18,11 @@ MonoBehaviour:
   - It was on the table, then poof
   - Gone
   - Do you know the magic to bring it back?
-  autoProgressLines: 01010000
-  endDialogueLines: 00000001
+  - You found it... Wizard
+  - Maybe its lost forever
+  autoProgressLines: 010100000000
+  endDialogueLines: 000000010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  objInProgressIndex: 0
-  objCompletedIndex: 0
-  objective: {fileID: 0}
-  givesObjective: 
+  incorrectItemIndex: 5
+  correctItemIndex: 4

@@ -95,18 +95,22 @@ public class NPC : MonoBehaviour, IInteractable
 
     private void SyncCompareState()
     {
-        if (compare.IsComparing() == 0)
+        if (compare != null)
         {
-            compareState = CompareState.Correct;
+            if (compare.IsComparing() == 0)
+            {
+                compareState = CompareState.Correct;
+            }
+            else if (compare.IsComparing() == 1)
+            {
+                compareState = CompareState.Incorrect;
+            }
+            else if (compare.IsComparing() == 2)
+            {
+                compareState = CompareState.NotComparing;
+            } 
         }
-        else if (compare.IsComparing() == 1)
-        {
-            compareState = CompareState.Incorrect;
-        }
-        else if (compare.IsComparing() == 2)
-        {
-            compareState = CompareState.NotComparing;
-        }
+       
     }
 
     // private void SyncObjectiveState()

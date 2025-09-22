@@ -17,11 +17,11 @@ MonoBehaviour:
   - I left my locket downstairs
   - I cant go fetch it while he still has guests over
   - Could you bring it up for me?
-  autoProgressLines: 010000
-  endDialogueLines: 000001
+  - mmmm
+  - Thank you :D
+  autoProgressLines: 0100000000
+  endDialogueLines: 0000010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  objInProgressIndex: 0
-  objCompletedIndex: 0
-  objective: {fileID: 0}
-  givesObjective: 
+  incorrectItemIndex: 3
+  correctItemIndex: 4

@@ -18,11 +18,11 @@ MonoBehaviour:
   - Its just a purple block... I cant see very well
   - Or read
   - But I still want it back
-  autoProgressLines: 00010100
-  endDialogueLines: 00000001
+  - I may be blind but its not that
+  - Yes thats it, thank you
+  autoProgressLines: 000101000000
+  endDialogueLines: 000000010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  objInProgressIndex: 0
-  objCompletedIndex: 0
-  objective: {fileID: 0}
-  givesObjective: 
+  incorrectItemIndex: 4
+  correctItemIndex: 5

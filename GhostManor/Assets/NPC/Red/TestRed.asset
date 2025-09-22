@@ -18,11 +18,11 @@ MonoBehaviour:
   - After everything Ive done for him
   - That backstabber
   - Bring me the knife.
-  autoProgressLines: 01010000
-  endDialogueLines: 00000001
+  - Thanks!
+  - Thats not a knife
+  autoProgressLines: 010100000000
+  endDialogueLines: 000000010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  objInProgressIndex: 2
-  objCompletedIndex: 2
-  objective: {fileID: 11400000, guid: ec637d25cf9017646ae5100ef7d07ae2, type: 2}
-  givesObjective: 000001
+  incorrectItemIndex: 5
+  correctItemIndex: 4

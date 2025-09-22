@@ -16,11 +16,11 @@ MonoBehaviour:
   dialogueLines:
   - '*Violent Coughing*'
   - I know I left a Green tub of medication somewhere...
-  autoProgressLines: 0100
-  endDialogueLines: 0001
+  - No *More violent Coughing*
+  - Thanks
+  autoProgressLines: 01000000
+  endDialogueLines: 00010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  objInProgressIndex: 0
-  objCompletedIndex: 0
-  objective: {fileID: 0}
-  givesObjective: 
+  incorrectItemIndex: 2
+  correctItemIndex: 3
