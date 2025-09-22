@@ -7,10 +7,10 @@ using UnityEngine;
 // Available at: https://youtu.be/eSH9mzcMRqw?si=EnQGNmLLeNjehw7f 
 
 [CreateAssetMenu(fileName = "NewNPCDialogue", menuName = "NPC Dialogue")]
-public class NPCDialogue : MonoBehaviour
+public class NPCDialogue : ScriptableObject
 {
     public string npcName;
-    public Sprite npcPortrait;
+    //public Sprite npcPortrait;
 
     public string[] dialogueLines;
     public bool[] autoProgressLines;
@@ -22,5 +22,5 @@ public class NPCDialogue : MonoBehaviour
     public int objCompletedIndex;
     public Objective objective;
 
-    public bool[] givesQuest;
+    public bool[] givesObjective;
 }

@@ -4,6 +4,7 @@ public class Item : MonoBehaviour
 {
     private Rigidbody rb;
 
+    public int itemID;
     public string itemName;
 
     void Awake()

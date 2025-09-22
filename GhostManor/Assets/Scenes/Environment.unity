@@ -668,9 +668,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1544366371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &16250603
@@ -10652,7 +10652,7 @@ RectTransform:
   m_Father: {fileID: 1148464785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12512,12 +12512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 390503852}
   Npc: {fileID: 86215743}
-  disappearSpeed: 2
 --- !u!43 &87572388
 Mesh:
   m_ObjectHideFlags: 0
@@ -12808,12 +12805,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 323098721}
   Npc: {fileID: 88040020}
-  disappearSpeed: 2
 --- !u!1 &89019710
 GameObject:
   m_ObjectHideFlags: 0
@@ -16917,8 +16911,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1535551636}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1053866953}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -30457,7 +30451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &376300603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31796,7 +31790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &444975719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46871,7 +46865,7 @@ RectTransform:
   m_Father: {fileID: 1903586533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -67395,6 +67389,7 @@ GameObject:
   - component: {fileID: 1053866951}
   - component: {fileID: 1053866950}
   - component: {fileID: 1053866949}
+  - component: {fileID: 1053866953}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -67478,10 +67473,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1274861071}
-  - {fileID: 376300603}
+  - {fileID: 444975719}
   - {fileID: 2107641534}
   - {fileID: 1405511448}
-  - {fileID: 444975719}
+  - {fileID: 376300603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -67489,6 +67484,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1053866953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053866948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8111745f195f1a445a8b5905d1864609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCanvas: {fileID: 1405511444}
+  menus:
+  - {fileID: 1535551634}
+  - {fileID: 2096869253}
+  - {fileID: 306327632}
+  - {fileID: 1535608697}
+  buttons:
+  - {fileID: 0}
+  - {fileID: 1155790996}
+  - {fileID: 1436472420}
+  - {fileID: 1250986764}
+  hotbarSlots: {fileID: 2107641533}
 --- !u!43 &1059062125
 Mesh:
   m_ObjectHideFlags: 0
@@ -72200,8 +72219,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1535551636}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1053866953}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -72929,11 +72948,6 @@ PrefabInstance:
 --- !u!4 &1172428943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3402817370099209360, guid: f9694607ee6c35e418e553e2df856c73, type: 3}
-  m_PrefabInstance: {fileID: 1172428942}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1172428945 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3731230832852954332, guid: f9694607ee6c35e418e553e2df856c73, type: 3}
   m_PrefabInstance: {fileID: 1172428942}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1177490485
@@ -76270,9 +76284,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2100741063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1278781271
@@ -84271,7 +84285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1405511445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85825,11 +85839,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9606eed0bab9bf40b8b416b7367a811, type: 3}
---- !u!198 &1455492581 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3615861583003675427, guid: d289fd141f910b44b9e4f9fcc3b9543f, type: 3}
-  m_PrefabInstance: {fileID: 375683876}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1457386617
 GameObject:
   m_ObjectHideFlags: 0
@@ -89868,7 +89877,6 @@ GameObject:
   - component: {fileID: 1535551638}
   - component: {fileID: 1535551637}
   - component: {fileID: 1535551636}
-  - component: {fileID: 1535551639}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -89918,7 +89926,6 @@ MonoBehaviour:
   dialogueBox: {fileID: 376300602}
   controlsMenu: {fileID: 2096869253}
   settingsMenu: {fileID: 1535608697}
-  questsMenu: {fileID: 306327632}
 --- !u!114 &1535551637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89957,28 +89964,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535551634}
   m_CullTransparentMesh: 1
---- !u!95 &1535551639
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535551634}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4166935cbf8e5a34793431c3afa89edf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1535608697
 GameObject:
   m_ObjectHideFlags: 0
@@ -90527,7 +90512,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -14, y: 294}
-  m_SizeDelta: {x: -1150.1216, y: 0}
+  m_SizeDelta: {x: -1150.1216, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1544366372
 MonoBehaviour:
@@ -92844,8 +92829,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Drop[/Keyboard/q]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1535551636}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1053866953}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: OnPause
         m_Mode: 0
         m_Arguments:
@@ -98553,12 +98538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 1461578066}
   Npc: {fileID: 1698445188}
-  disappearSpeed: 2
 --- !u!114 &1698445194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98571,14 +98553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bff9f327bbc945438f3b07f5a57ce90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: 2169a8c60c1158c49ae5aaab8b78c815, type: 2}
-  NPC: {fileID: 1698445188}
-  newText: {fileID: 769160416}
-  infoText: {fileID: 322007665}
-  nameText: {fileID: 1072448535}
-  dialoguePanel: {fileID: 376300602}
-  hotbarSlots: {fileID: 2107641533}
-  textSpeed: 0.02
 --- !u!1 &1700233169
 GameObject:
   m_ObjectHideFlags: 0
@@ -100455,8 +100429,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 261326882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -107448,7 +107422,7 @@ RectTransform:
   m_Father: {fileID: 1000207923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -110926,12 +110900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 1808954917}
   Npc: {fileID: 1922869198}
-  disappearSpeed: 2
 --- !u!43 &1925817938
 Mesh:
   m_ObjectHideFlags: 0
@@ -112782,12 +112753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 0}
-  stars: {fileID: 0}
   player: {fileID: 1569261697}
   objectType: {fileID: 797374960}
   Npc: {fileID: 1973254638}
-  disappearSpeed: 2
 --- !u!1 &1982270786
 GameObject:
   m_ObjectHideFlags: 0
@@ -116034,12 +116002,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flames: {fileID: 1172428945}
-  stars: {fileID: 1455492581}
   player: {fileID: 1569261697}
   objectType: {fileID: 1921601087}
   Npc: {fileID: 2070962957}
-  disappearSpeed: 2
 --- !u!1 &2075792593
 GameObject:
   m_ObjectHideFlags: 0
@@ -117256,7 +117221,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2100741064
 MonoBehaviour:
