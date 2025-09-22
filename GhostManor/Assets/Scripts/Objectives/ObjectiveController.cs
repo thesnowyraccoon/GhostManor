@@ -31,9 +31,9 @@ public class ObjectiveController : MonoBehaviour
     {
         if (IsObjActive(objective.objectiveID)) return;
 
-        activeObjectives.Add(new ObjectiveProgress(objective));
-
         Debug.Log("Quest Accepted");
+
+        activeObjectives.Add(new ObjectiveProgress(objective));
 
         objectiveUI.UpdateObjectiveUI();
     }
