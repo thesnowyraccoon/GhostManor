@@ -2,23 +2,52 @@ using UnityEngine;
 
 public class DoorInteract : MonoBehaviour, IInteractable
 {
+    public FPController player;
+    public Item keyType;
     Animator animator;
 
+    public bool isLocked = false;
     bool isOpened = false;
 
     public void Interact()
     {
-        if (!isOpened)
+        if (isLocked == false)
         {
-            isOpened = true;
-            animator.SetBool("Opened", isOpened);
-            SoundManager.Play("DoorOpen");
+            if (!isOpened)
+            {
+                isOpened = true;
+                animator.SetBool("Opened", isOpened);
+                SoundManager.Play("DoorOpen");
+            }
+            else
+            {
+                isOpened = false;
+                animator.SetBool("Opened", isOpened);
+                SoundManager.Play("DoorOpen");
+            }
         }
-        else
+        else if (isLocked == true)
         {
-            isOpened = false;
-            animator.SetBool("Opened", isOpened);
-            SoundManager.Play("DoorOpen");
+            if (keyType == player.heldObject)
+            {
+                if (!isOpened)
+                {
+                    isOpened = true;
+                    animator.SetBool("Opened", isOpened);
+                    SoundManager.Play("DoorOpen");
+                }
+                else
+                {
+                    isOpened = false;
+                    animator.SetBool("Opened", isOpened);
+                    SoundManager.Play("DoorOpen");
+                }
+            }
+            else
+            {
+                SoundManager.Play("Locked");
+            }
+            
         }
     }
 
