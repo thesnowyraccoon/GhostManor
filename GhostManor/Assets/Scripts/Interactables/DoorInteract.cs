@@ -30,18 +30,9 @@ public class DoorInteract : MonoBehaviour, IInteractable
         {
             if (keyType == player.heldObject)
             {
-                if (!isOpened)
-                {
-                    isOpened = true;
-                    animator.SetBool("Opened", isOpened);
-                    SoundManager.Play("DoorOpen");
-                }
-                else
-                {
-                    isOpened = false;
-                    animator.SetBool("Opened", isOpened);
-                    SoundManager.Play("DoorOpen");
-                }
+                isLocked = false; 
+                //delete the key
+            
             }
             else
             {
