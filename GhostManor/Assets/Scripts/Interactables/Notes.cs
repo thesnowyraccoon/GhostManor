@@ -19,14 +19,16 @@ public class Notes : MonoBehaviour, IInteractable
             note.SetActive(true);
             isReading = true;
             SoundManager.Play("Paper");
+            PauseController.SetPause(true);
         }
         else
         {
-            
+
             hotBar.SetActive(true);
             note.SetActive(false);
             isReading = false;
             SoundManager.Play("Paper");
+            PauseController.SetPause(false);
         }
     }
 }

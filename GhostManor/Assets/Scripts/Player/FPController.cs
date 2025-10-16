@@ -60,7 +60,7 @@ public class FPController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        if (!PauseController.isPaused) moveInput = context.ReadValue<Vector2>();
+        moveInput = context.ReadValue<Vector2>();
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -209,9 +209,7 @@ public class FPController : MonoBehaviour
     {
         if (PauseController.isPaused)
         {
-            //Time.timeScale = 0f;
-
-            //currentSpeed = 0f;
+            currentSpeed = 0f;
             currentSensitivity = 0f;
 
             Cursor.lockState = CursorLockMode.None;
@@ -219,9 +217,8 @@ public class FPController : MonoBehaviour
         }
         else
         {
-            //Time.timeScale = 1f;
-
-            //currentSpeed = moveSpeed;
+            if (currentSpeed == 0) currentSpeed = moveSpeed;
+        
             currentSensitivity = lookSensitivity;
 
             Cursor.lockState = CursorLockMode.Locked;
