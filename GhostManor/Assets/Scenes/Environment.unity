@@ -33695,6 +33695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1569261697}
+  hotbar: {fileID: 2107641535}
   keyType: {fileID: 1308590963}
   isLocked: 1
 --- !u!95 &416833957
@@ -34946,6 +34947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1569261697}
+  hotbar: {fileID: 0}
   keyType: {fileID: 1308590963}
   isLocked: 1
 --- !u!95 &448926763
@@ -70142,6 +70144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  hotbar: {fileID: 0}
   keyType: {fileID: 0}
   isLocked: 0
 --- !u!95 &981041093
@@ -73886,7 +73889,7 @@ MonoBehaviour:
   - {fileID: 1436472420}
   - {fileID: 1250986764}
   - {fileID: 2133283880}
-  hotbarSlots: {fileID: 0}
+  hotbarSlots: {fileID: 2107641533}
   lookSlider: {fileID: 383818410}
   player: {fileID: 1569261697}
 --- !u!1001 &1056070221
@@ -76850,6 +76853,7 @@ GameObject:
   - component: {fileID: 1094535936}
   - component: {fileID: 1094535937}
   - component: {fileID: 1094535938}
+  - component: {fileID: 1094535939}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -76912,6 +76916,20 @@ MonoBehaviour:
   player: {fileID: 1569261696}
   mainMenuCanvas: {fileID: 1174871776}
   mainMenuCamera: {fileID: 2094286423}
+--- !u!114 &1094535939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094535935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fe848f79b06024db8bee17efd2dd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveAmount: 0.5
+  smoothSpeed: 1
 --- !u!43 &1097496006
 Mesh:
   m_ObjectHideFlags: 0
@@ -78886,6 +78904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1569261697}
+  hotbar: {fileID: 0}
   keyType: {fileID: 1308590963}
   isLocked: 1
 --- !u!95 &1122500035
@@ -112247,6 +112266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  hotbar: {fileID: 0}
   keyType: {fileID: 0}
   isLocked: 0
 --- !u!95 &1755514795

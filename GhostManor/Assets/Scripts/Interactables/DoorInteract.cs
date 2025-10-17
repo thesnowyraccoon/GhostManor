@@ -3,7 +3,9 @@ using UnityEngine;
 public class DoorInteract : MonoBehaviour, IInteractable
 {
     public FPController player;
+    public HotbarController hotbar;
     public Item keyType;
+
     Animator animator;
 
     public bool isLocked = false;
@@ -30,15 +32,20 @@ public class DoorInteract : MonoBehaviour, IInteractable
         {
             if (keyType == player.heldObject)
             {
-                isLocked = false; 
-                //delete the key
-            
+                isLocked = false;
+                
+                hotbar.RemoveItem(player.heldObject.gameObject);
+                hotbar.RebuildHotbar();
+
+                Destroy(player.heldObject.gameObject);
+                player.heldObject = null;
+
+                //Play unlocked sound
             }
             else
             {
                 SoundManager.Play("Locked");
             }
-            
         }
     }
 

@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
 
 public class FPController : MonoBehaviour
 {
@@ -30,7 +28,6 @@ public class FPController : MonoBehaviour
 
     public Transform holdPoint;
     public Item heldObject;
-    
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -214,6 +211,8 @@ public class FPController : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            hotbar.gameObject.SetActive(false);
         }
         else
         {
@@ -223,6 +222,8 @@ public class FPController : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            hotbar.gameObject.SetActive(true);
         }
     }
 }
