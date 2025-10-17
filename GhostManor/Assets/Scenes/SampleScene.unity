@@ -11624,7 +11624,6 @@ MonoBehaviour:
   jumpHeight: 1.5
   cameraTransform: {fileID: 330585546}
   lookSensitivity: 2
-  sensitivity: {fileID: 0}
   verticalLookLimit: 90
   crouchHeight: 1
   standHeight: 2
@@ -24484,6 +24483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504ecea6cb050244aa4b86e8104b1249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  keyType: {fileID: 0}
+  isLocked: 0
 --- !u!95 &1152346056
 Animator:
   serializedVersion: 7
