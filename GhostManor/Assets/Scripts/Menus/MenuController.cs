@@ -33,6 +33,8 @@ public class MenuController : MonoBehaviour
         {
             if (!menuCanvas.activeSelf && PauseController.isPaused)
             {
+                //Time.timeScale = 0f;
+
                 return;
             }
 
@@ -41,6 +43,8 @@ public class MenuController : MonoBehaviour
             PauseController.SetPause(menuCanvas.activeSelf);
 
             ActivateMenu(0);
+
+            //Time.timeScale = 1f;
         }
     }
 
@@ -68,7 +72,7 @@ public class MenuController : MonoBehaviour
         }
 
         menuCanvas.SetActive(!menuCanvas.activeSelf);
-        hotbarSlots.SetActive(true);
+        hotbarSlots.SetActive(!menuCanvas.activeSelf);
         PauseController.SetPause(menuCanvas.activeSelf);
     }
 
