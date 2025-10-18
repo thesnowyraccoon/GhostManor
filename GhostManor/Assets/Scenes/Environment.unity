@@ -31877,7 +31877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3402817370099209360, guid: f9694607ee6c35e418e553e2df856c73, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.332
+      value: -11.212
       objectReference: {fileID: 0}
     - target: {fileID: 3402817370099209360, guid: f9694607ee6c35e418e553e2df856c73, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42904,7 +42904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835940531528473420, guid: d289fd141f910b44b9e4f9fcc3b9543f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.328998
+      value: -11.208997
       objectReference: {fileID: 0}
     - target: {fileID: 7835940531528473420, guid: d289fd141f910b44b9e4f9fcc3b9543f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -89713,8 +89713,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.584708, y: 2.764061, z: 1}
+  m_Center: {x: 1.7923633, y: -0.882029, z: -6.4181654e-10}
 --- !u!23 &1308590965
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -99880,7 +99880,7 @@ Transform:
   m_GameObject: {fileID: 1519944976}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.20442227, z: -0, w: 0.9788828}
-  m_LocalPosition: {x: -9.780001, y: 11.489, z: 3.67}
+  m_LocalPosition: {x: -9.780001, y: 11.528, z: 3.67}
   m_LocalScale: {x: 1.5423, y: 1.6224278, z: 1.5629438}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108256,6 +108256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1654380656}
+  - component: {fileID: 1654380657}
   m_Layer: 0
   m_Name: Lamb
   m_TagString: Untagged
@@ -108281,6 +108282,28 @@ Transform:
   - {fileID: 433516081}
   m_Father: {fileID: 1130792416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1654380657
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654380655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4183ec124aa6d3b4e9c1ea3fd8d60977, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1654587775
 GameObject:
   m_ObjectHideFlags: 0
@@ -109568,7 +109591,7 @@ Transform:
   m_GameObject: {fileID: 1670193237}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.600001, y: 11.489001, z: 1.8009996}
+  m_LocalPosition: {x: -9.600001, y: 11.535, z: 1.8009996}
   m_LocalScale: {x: 1.5423, y: 1.6224278, z: 1.5629438}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126778,6 +126801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2014596215}
+  - component: {fileID: 2014596216}
   m_Layer: 0
   m_Name: Deer
   m_TagString: Untagged
@@ -126803,6 +126827,28 @@ Transform:
   - {fileID: 595050715}
   m_Father: {fileID: 1130792416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2014596216
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014596214}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91b91c2f180f28c4999f6bba92ebae31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!43 &2017962315
 Mesh:
   m_ObjectHideFlags: 0
@@ -133257,6 +133303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2114831670}
+  - component: {fileID: 2114831671}
   m_Layer: 0
   m_Name: Tiger
   m_TagString: Untagged
@@ -133282,6 +133329,28 @@ Transform:
   - {fileID: 839346745177061607}
   m_Father: {fileID: 1130792416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2114831671
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114831669}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c247daca2c4f60846aa730ec69c6f9f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2122362690
 GameObject:
   m_ObjectHideFlags: 0
