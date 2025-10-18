@@ -52128,6 +52128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 743383266}
+  - component: {fileID: 743383267}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Untagged
@@ -52153,6 +52154,28 @@ Transform:
   - {fileID: 375683877}
   m_Father: {fileID: 1130792416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &743383267
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743383265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a31f62103587cd34094c353b3628fd45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!43 &748371206
 Mesh:
   m_ObjectHideFlags: 0
@@ -105418,6 +105441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607751767}
+  - component: {fileID: 1607751768}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Untagged
@@ -105443,6 +105467,28 @@ Transform:
   - {fileID: 1562218125}
   m_Father: {fileID: 1130792416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1607751768
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607751766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28e29788e04678341bff872198d2bdfc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1616098862
 GameObject:
   m_ObjectHideFlags: 0
@@ -119785,6 +119831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1825201902}
+  - component: {fileID: 1825201903}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -119810,6 +119857,28 @@ Transform:
   - {fileID: 666695858}
   m_Father: {fileID: 1130792416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1825201903
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825201901}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: beb5f04536920b34eae5be28fe03cacd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1827848193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d61ecb608214044a949cd3c58c995d4, type: 3}
