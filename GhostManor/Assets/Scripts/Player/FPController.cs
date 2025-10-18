@@ -38,10 +38,15 @@ public class FPController : MonoBehaviour
     [Header("Inventory Settings")]
     public HotbarController hotbar;
 
+    [Header("Animations")]
+    public Animator animator;
+    public GameObject model;
+
     
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
 
         currentSpeed = moveSpeed;
         currentSensitivity = lookSensitivity;
@@ -58,6 +63,15 @@ public class FPController : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+
+        if (context.performed)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -97,7 +111,13 @@ public class FPController : MonoBehaviour
     {
         if (context.performed && controller.isGrounded)
         {
+            animator.SetBool("isJumping", true);
+
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+        else
+        {
+            animator.SetBool("isJumping", false);
         }
     }
 
@@ -105,11 +125,19 @@ public class FPController : MonoBehaviour
     {
         if (context.performed)
         {
+            animator.SetBool("isCrouching", true);
+
+            model.transform.localPosition = new Vector3(model.transform.localPosition.x, -0.55f, model.transform.localPosition.z);
+            
             controller.height = crouchHeight;
             currentSpeed = crouchSpeed;
         }
         else if (context.canceled)
         {
+            animator.SetBool("isCrouching", false);
+
+            model.transform.localPosition = new Vector3(model.transform.localPosition.x, -0.915f, model.transform.localPosition.z);
+
             controller.height = standHeight;
             currentSpeed = moveSpeed;
         }
