@@ -26,6 +26,11 @@ public class MainMenuController : MonoBehaviour
         animator.SetBool("isActive", true);
     }
 
+    public void OnQuit()
+    {
+        Application.Quit();
+    }
+
     public void PlayEvent()
     {
         UI.SetActive(true);
