@@ -6,7 +6,8 @@ public class DoorInteract : MonoBehaviour, IInteractable
     public HotbarController hotbar;
     public Item keyType;
 
-    Animator animator;
+    private Animator animator;
+    private OcclusionPortal occlusion;
 
     public bool isLocked = false;
     bool isOpened = false;
@@ -18,12 +19,18 @@ public class DoorInteract : MonoBehaviour, IInteractable
             if (!isOpened)
             {
                 isOpened = true;
+
+                occlusion.open = true;
+
                 animator.SetBool("Opened", isOpened);
                 SoundManager.Play("DoorOpen");
             }
             else
             {
                 isOpened = false;
+
+                occlusion.open = false;
+                
                 animator.SetBool("Opened", isOpened);
                 SoundManager.Play("DoorOpen");
             }
@@ -52,5 +59,6 @@ public class DoorInteract : MonoBehaviour, IInteractable
     void Start()
     {
         animator = GetComponent<Animator>();
+        occlusion = GetComponent<OcclusionPortal>();
     }
 }
