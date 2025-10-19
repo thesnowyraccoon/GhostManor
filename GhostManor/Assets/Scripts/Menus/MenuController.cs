@@ -10,10 +10,11 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    [Header("Main Menu")]
+    [Header("Menu")]
     public GameObject menuCanvas;
+    public Animator animator;
 
-    [Header("Menus")]
+    [Header("Sub-menus")]
     public GameObject[] menus;
     public Button[] buttons;
 
@@ -31,20 +32,7 @@ public class MenuController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (!menuCanvas.activeSelf && PauseController.isPaused)
-            {
-                //Time.timeScale = 0f;
-
-                return;
-            }
-
-            menuCanvas.SetActive(!menuCanvas.activeSelf);
-            hotbarSlots.SetActive(!menuCanvas.activeSelf);
-            PauseController.SetPause(menuCanvas.activeSelf);
-
-            ActivateMenu(0);
-
-            //Time.timeScale = 1f;
+            AnimateMenu();
         }
     }
 
@@ -74,6 +62,8 @@ public class MenuController : MonoBehaviour
         menuCanvas.SetActive(!menuCanvas.activeSelf);
         hotbarSlots.SetActive(!menuCanvas.activeSelf);
         PauseController.SetPause(menuCanvas.activeSelf);
+
+        ActivateMenu(0);
     }
 
     public void Back()
@@ -84,5 +74,17 @@ public class MenuController : MonoBehaviour
     public void SensitivitySlider()
     {
         player.SetLookSensivity(lookSlider.value);
+    }
+
+    public void AnimateMenu()
+    {
+        if (!menuCanvas.activeSelf)
+        {
+            animator.SetBool("isOpen", true);
+        }
+        else
+        {
+            animator.SetBool("isOpen", false);
+        }
     }
 }

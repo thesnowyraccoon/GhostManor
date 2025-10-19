@@ -23,8 +23,6 @@ public class MainMenuController : MonoBehaviour
 
     public void OnPlay()
     {
-        mainMenuCanvas.SetActive(false);
-
         animator.SetBool("isActive", true);
     }
 
@@ -34,5 +32,10 @@ public class MainMenuController : MonoBehaviour
         player.SetActive(true);
 
         mainMenuCamera.SetActive(false);
+    }
+
+    public void MenuAnimationEvent()
+    {
+        mainMenuCanvas.SetActive(false);
     }
 }

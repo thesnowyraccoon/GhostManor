@@ -10,28 +10,24 @@ public class DoorInteract : MonoBehaviour, IInteractable
     private OcclusionPortal occlusion;
 
     public bool isLocked = false;
-    bool isOpened = false;
+    bool isOpen = false;
 
     public void Interact()
     {
         if (isLocked == false)
         {
-            if (!isOpened)
+            if (!isOpen)
             {
-                isOpened = true;
+                isOpen = true;
 
-                occlusion.open = true;
-
-                animator.SetBool("Opened", isOpened);
+                animator.SetBool("isOpen", isOpen);
                 SoundManager.Play("DoorOpen");
             }
             else
             {
-                isOpened = false;
-
-                occlusion.open = false;
+                isOpen = false;
                 
-                animator.SetBool("Opened", isOpened);
+                animator.SetBool("isOpen", isOpen);
                 SoundManager.Play("DoorOpen");
             }
         }
@@ -58,7 +54,6 @@ public class DoorInteract : MonoBehaviour, IInteractable
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        occlusion = GetComponent<OcclusionPortal>();
+        animator = GetComponentInParent<Animator>();
     }
 }
