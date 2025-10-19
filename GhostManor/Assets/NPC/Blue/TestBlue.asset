@@ -16,15 +16,19 @@ MonoBehaviour:
   dialogueLines:
   - Welcome to my masters Manor
   - I do apologise for the inconvience of the ghosts
-  - after many years they have become a bit frustrated
+  - after many years they have become a bit frustrated being trapped here
   - You can help free us... if youre up for that task
-  - You have to bring the ghosts an item they relate to (more to come in the future)
-  - Like I lost my Wallet, bring that to me and Ill be out of your way
-  - Thats correct!
-  - Not quite
-  autoProgressLines: 0001000001000000
-  endDialogueLines: 0000000000010101
+  - A lot of the ghosts here wont talk to you unless you can prove yourself
+  - We were all killed here, each different methods, if you can find the murder weapon
+    theyll talk more to you
+  - 'All I remeber is a saw, If you can find something similar and bring it to me '
+  - Ill be closer to being free
+  - We have a cyan glow where the wounds are if that helps
+  - Yeah... Thats it... Thank you
+  - I dont think thats quite it
+  autoProgressLines: 0001010001000100000000
+  endDialogueLines: 0000000000000001010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  incorrectItemIndex: 7
-  correctItemIndex: 6
+  incorrectItemIndex: 9
+  correctItemIndex: 10
