@@ -26588,6 +26588,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -97.65131
       objectReference: {fileID: 0}
+    - target: {fileID: -2843909369972686622, guid: 945cfcbf7d989af4aacd2cfbe4a08cec, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 85ada5dabe15ea943a7b2629725789c9, type: 2}
     - target: {fileID: -2806649645742534349, guid: 945cfcbf7d989af4aacd2cfbe4a08cec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.0000004085102
@@ -91818,8 +91822,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 11.768996, y: 3.8410888, z: 12.3487625}
+  m_Center: {x: -0.008897822, y: -0.013123714, z: -5.674374}
 --- !u!43 &1387485689
 Mesh:
   m_ObjectHideFlags: 0
