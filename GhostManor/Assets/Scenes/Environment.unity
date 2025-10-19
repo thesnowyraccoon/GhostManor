@@ -33364,6 +33364,7 @@ GameObject:
   - component: {fileID: 416833958}
   - component: {fileID: 416833957}
   - component: {fileID: 416833956}
+  - component: {fileID: 416833962}
   m_Layer: 0
   m_Name: Gold Door
   m_TagString: Untagged
@@ -33526,6 +33527,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416833954}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!41 &416833962
+OcclusionPortal:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416833954}
+  m_Open: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
 --- !u!1001 &419030133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34616,6 +34627,7 @@ GameObject:
   - component: {fileID: 448926764}
   - component: {fileID: 448926763}
   - component: {fileID: 448926762}
+  - component: {fileID: 448926768}
   m_Layer: 0
   m_Name: Gold Door
   m_TagString: Untagged
@@ -34778,6 +34790,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448926760}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!41 &448926768
+OcclusionPortal:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448926760}
+  m_Open: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
 --- !u!1 &462522645
 GameObject:
   m_ObjectHideFlags: 0
@@ -70286,6 +70308,7 @@ GameObject:
   - component: {fileID: 981041094}
   - component: {fileID: 981041093}
   - component: {fileID: 981041092}
+  - component: {fileID: 981041098}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -70448,6 +70471,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981041090}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!41 &981041098
+OcclusionPortal:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981041090}
+  m_Open: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
 --- !u!1 &983258148
 GameObject:
   m_ObjectHideFlags: 0
@@ -78938,6 +78971,7 @@ GameObject:
   - component: {fileID: 1122500036}
   - component: {fileID: 1122500035}
   - component: {fileID: 1122500034}
+  - component: {fileID: 1122500040}
   m_Layer: 0
   m_Name: Silver Door
   m_TagString: Untagged
@@ -79100,6 +79134,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122500032}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!41 &1122500040
+OcclusionPortal:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122500032}
+  m_Open: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
 --- !u!1001 &1130119143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111550,6 +111594,7 @@ GameObject:
   - component: {fileID: 1755514796}
   - component: {fileID: 1755514795}
   - component: {fileID: 1755514794}
+  - component: {fileID: 1755514800}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -111712,6 +111757,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755514792}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!41 &1755514800
+OcclusionPortal:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755514792}
+  m_Open: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
 --- !u!1 &1756307237
 GameObject:
   m_ObjectHideFlags: 0
