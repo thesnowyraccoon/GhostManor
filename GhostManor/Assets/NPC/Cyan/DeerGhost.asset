@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f02122836f03d4b45aa9326ad406f54d, type: 3}
-  m_Name: TestRed
+  m_Name: DeerGhost
   m_EditorClassIdentifier: 
-  npcName: Tiger
+  npcName: Deer
   dialogueLines:
-  - I cant believe he betrayed us like that!
-  - After everything Ive done for him
-  - That backstabber
-  - Bring me the knife.
-  - Thanks!
-  - Thats not a knife
-  autoProgressLines: 010100000000
-  endDialogueLines: 000000010101
+  - I dont remember much
+  - I can only remeber her, theres a photo of her somewhere
+  - Why cant I remember anything....
+  - 'My head hurts '
+  - My Mon Cheri, thank you
+  - I dont remember this
+  - Its not what im looking for
+  autoProgressLines: 01000000000100
+  endDialogueLines: 00010101010001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   incorrectItemIndex: 5

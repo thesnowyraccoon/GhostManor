@@ -18,9 +18,10 @@ MonoBehaviour:
   - I cant go fetch it while he still has guests over
   - Could you bring it up for me?
   - mmmm
-  - Thank you :D
-  autoProgressLines: 0100000000
-  endDialogueLines: 0000010101
+  - Thank you!
+  - I miss my dad
+  autoProgressLines: 010100000100
+  endDialogueLines: 000001010001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   incorrectItemIndex: 3

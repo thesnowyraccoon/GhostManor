@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f02122836f03d4b45aa9326ad406f54d, type: 3}
-  m_Name: TestBlue
+  m_Name: RabbitDialogue
   m_EditorClassIdentifier: 
   npcName: Rabbit
   dialogueLines:
@@ -19,16 +19,15 @@ MonoBehaviour:
   - after many years they have become a bit frustrated being trapped here
   - You can help free us... if youre up for that task
   - A lot of the ghosts here wont talk to you unless you can prove yourself
-  - We were all killed here, each different methods, if you can find the murder weapon
-    theyll talk more to you
+  - We were all killed here, our objects should still be in this house
   - 'All I remeber is a saw, If you can find something similar and bring it to me '
   - Ill be closer to being free
-  - We have a cyan glow where the wounds are if that helps
+  - When you speak to the ghosts they may give you hints
   - Yeah... Thats it... Thank you
   - I dont think thats quite it
   autoProgressLines: 0001010001000100000000
   endDialogueLines: 0000000000000001010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  incorrectItemIndex: 9
-  correctItemIndex: 10
+  incorrectItemIndex: 10
+  correctItemIndex: 9

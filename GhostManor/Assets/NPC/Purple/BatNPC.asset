@@ -10,17 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f02122836f03d4b45aa9326ad406f54d, type: 3}
-  m_Name: Green2
+  m_Name: BatNPC
   m_EditorClassIdentifier: 
-  npcName: Crow
+  npcName: Bat
   dialogueLines:
-  - '*Violent Coughing*'
-  - I know I left a Green tub of medication somewhere...
-  - No *More violent Coughing*
-  - Thanks
-  autoProgressLines: 01000000
-  endDialogueLines: 00010101
+  - Who- who are you...
+  - I cant see anything without my glasses
+  - everything is a blur
+  - What is this??
+  - I cant see it
+  - Ha! I can finally see again
+  - Who are you... Youre not him.
+  autoProgressLines: 00000001000100
+  endDialogueLines: 01010100010001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  incorrectItemIndex: 2
-  correctItemIndex: 3
+  incorrectItemIndex: 3
+  correctItemIndex: 5
