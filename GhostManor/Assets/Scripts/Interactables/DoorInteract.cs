@@ -7,7 +7,6 @@ public class DoorInteract : MonoBehaviour, IInteractable
     public Item keyType;
 
     private Animator animator;
-    private OcclusionPortal occlusion;
 
     public bool isLocked = false;
     bool isOpen = false;
@@ -36,7 +35,7 @@ public class DoorInteract : MonoBehaviour, IInteractable
             if (keyType == player.heldObject)
             {
                 isLocked = false;
-                
+
                 hotbar.RemoveItem(player.heldObject.gameObject);
                 hotbar.RebuildHotbar();
 

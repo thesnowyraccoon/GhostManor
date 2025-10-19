@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class ButtonInteract : MonoBehaviour, IInteractable
 {
     Animator animator;
@@ -8,7 +9,7 @@ public class ButtonInteract : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        animator.SetBool("Pressed", true);
+        animator.SetBool("isPressed", true);
     }
 
     void Start()
@@ -16,7 +17,7 @@ public class ButtonInteract : MonoBehaviour, IInteractable
         animator = GetComponent<Animator>();
     }
 
-    void SetVisible()
+    public void SetVisible()
     {
         gameobject.SetActive(true);
     }

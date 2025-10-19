@@ -1,18 +1,34 @@
 using UnityEngine;
 
+[RequireComponent(typeof(NPC))]
 public class CompareObjects : MonoBehaviour
 {
+    [Header("Particles")]
     public ParticleSystem flames;
     public ParticleSystem stars;
+
+    [Header("Player")]
     public FPController player;
     public Item objectType;
+    public HotbarController hotbar;
+
+    [Header("NPC")]
     public NPC npc;
+
+    void Start()
+    {
+        npc = GetComponent<NPC>();
+    }
 
     void CheckHands()
     {
         stars.Play();
         SoundManager.Play("Correct");
+        
         Destroy(player.heldObject.gameObject);
+        player.heldObject = null;
+
+        hotbar.RebuildHotbar();
 
         // // What object does the player have in there hands
         // if (objectType == player.heldObject)
