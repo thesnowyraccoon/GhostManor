@@ -36,11 +36,14 @@ public class DoorInteract : MonoBehaviour, IInteractable
             {
                 isLocked = false;
 
-                hotbar.RemoveItem(player.heldObject.gameObject);
+                GameObject item = player.heldObject.gameObject;
+
+                player.heldObject.Drop();
+
+                hotbar.RemoveItem(item);
                 hotbar.RebuildHotbar();
 
-                Destroy(player.heldObject.gameObject);
-                player.heldObject = null;
+                item.SetActive(false);
 
                 //Play unlocked sound
             }
