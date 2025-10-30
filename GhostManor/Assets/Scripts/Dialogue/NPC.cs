@@ -53,21 +53,6 @@ public class NPC : MonoBehaviour, IInteractable
 
     void StartDialogue()
     {
-        // SyncObjectiveState();
-
-        // if (objectiveState == ObjectiveState.NotStarted)
-        // {
-        //     dialogueIndex = 0;
-        // }
-        // else if (objectiveState == ObjectiveState.InProgress)
-        // {
-        //     dialogueIndex = dialogueData.objInProgressIndex;
-        // }
-        // else if (objectiveState == ObjectiveState.Completed)
-        // {
-        //     dialogueIndex = dialogueData.objCompletedIndex;
-        // }
-
         SyncCompareState();
 
         if (compareState == CompareState.NotComparing)
@@ -112,26 +97,6 @@ public class NPC : MonoBehaviour, IInteractable
         }
        
     }
-
-    // private void SyncObjectiveState()
-    // {
-    //     if (dialogueData.objective == null) return;
-
-    //     string objectiveID = dialogueData.objective.objectiveID;
-
-    //     if (ObjectiveController.Instance.IsObjCompleted(objectiveID) || ObjectiveController.Instance.isObjHandedIn(objectiveID))
-    //     {
-    //         objectiveState = ObjectiveState.Completed;
-    //     }
-    //     else if (ObjectiveController.Instance.IsObjActive(objectiveID))
-    //     {
-    //         objectiveState = ObjectiveState.InProgress;
-    //     }
-    //     else
-    //     {
-    //         objectiveState = ObjectiveState.NotStarted;
-    //     }
-    // }
 
     void NextLine()
     {
