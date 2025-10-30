@@ -34,18 +34,6 @@ public class CompareObjects : MonoBehaviour
         hotbar.RebuildHotbar();
 
         item.SetActive(false);
-
-        // // What object does the player have in there hands
-        // if (objectType == player.heldObject)
-        // {
-        //     //Destroy(gameObject);
-        //     Destroy(player.heldObject.gameObject);
-        // }
-        // else
-        // {
-        //     //play particle, throw object
-        //     //Debug.Log("Wrong");
-        // }
     }
 
     public int IsComparing()
@@ -75,6 +63,5 @@ public class CompareObjects : MonoBehaviour
         {
             return 3;
         }
-
     }
 }
