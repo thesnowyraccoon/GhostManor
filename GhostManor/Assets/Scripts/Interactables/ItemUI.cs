@@ -4,6 +4,8 @@ public class ItemUI : MonoBehaviour
 {
     public GameObject reticleActive;
     public GameObject reticle;
+    public GameObject reticleTalk;
+    public GameObject reticlePaw;
     public float pickupRange = 3f;
     [SerializeField] private Transform cameraTransform;
 
@@ -37,10 +39,22 @@ public class ItemUI : MonoBehaviour
 
                 lastItem = hit.collider.GetComponent<ItemOutline>();
             }
+            else if (hit.collider.CompareTag("NPC"))
+            {
+                reticleTalk.SetActive(true);
+                reticle.SetActive(false);
+            }
+            else if (hit.collider.CompareTag("Interact"))
+            {
+                reticlePaw.SetActive(true);
+                reticle.SetActive(false); 
+            }
             else
             {
                 reticleActive.SetActive(false);
                 reticle.SetActive(true);
+                reticleTalk.SetActive(false);
+                reticlePaw.SetActive(false);
 
                 if (lastItem != null)
                 {
