@@ -64606,6 +64606,11 @@ MonoBehaviour:
   - soundName: Wrong
     audioClips:
     - {fileID: 8300000, guid: 80efc9d156c16f847be9c19c121a194a, type: 3}
+  - soundName: Footsteps
+    audioClips:
+    - {fileID: 8300000, guid: 58b94cf745636d04599e8c38e358056b, type: 3}
+    - {fileID: 8300000, guid: f18904fbc38abd24798821ecc221f82e, type: 3}
+    - {fileID: 8300000, guid: af1efee159dd23d4ba1c2012b4eab682, type: 3}
 --- !u!114 &889288692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105559,6 +105564,7 @@ MonoBehaviour:
   sprintSpeed: 5
   gravity: -39.24
   jumpHeight: 1.5
+  footStepSpeed: 0.5
   cameraTransform: {fileID: 1402354023}
   lookSensitivity: 20
   verticalLookLimit: 70
