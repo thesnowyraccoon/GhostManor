@@ -135,6 +135,8 @@ public class NPC : MonoBehaviour, IInteractable
         {
             dialogueUI.SetDialogueText(dialogueUI.dialogueText.text += letter);
 
+            SoundManager.Play("Dialogue");
+
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 

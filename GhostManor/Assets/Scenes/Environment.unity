@@ -64611,6 +64611,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 58b94cf745636d04599e8c38e358056b, type: 3}
     - {fileID: 8300000, guid: f18904fbc38abd24798821ecc221f82e, type: 3}
     - {fileID: 8300000, guid: af1efee159dd23d4ba1c2012b4eab682, type: 3}
+  - soundName: Dialogue
+    audioClips:
+    - {fileID: 8300000, guid: 4270ae038f4acd543b540f554d9c48ed, type: 3}
+    - {fileID: 8300000, guid: 38505271ede6fb9488c55578d4dd0685, type: 3}
+    - {fileID: 8300000, guid: e59df9fc914f71448bbdbebbaa73dc96, type: 3}
 --- !u!114 &889288692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67663,6 +67668,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9d98b9e7d95e05c4aa3fd18a6769255a, type: 3}
       propertyPath: m_TagString
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d98b9e7d95e05c4aa3fd18a6769255a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -103699,10 +103708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb8002e42226b54f8209880e24d63a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1569261696}
-  hideHeight: 0.5
-  hidingSpot: {fileID: 1990861786}
-  exitSpot: {fileID: 2132508758}
 --- !u!64 &1554033685
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -109516,7 +109521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305b77cd5d99c1142bb0c8bf03e58eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefabs: []
 --- !u!1 &1652128842
 GameObject:
   m_ObjectHideFlags: 0
