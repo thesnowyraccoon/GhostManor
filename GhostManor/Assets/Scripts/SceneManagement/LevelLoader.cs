@@ -12,18 +12,21 @@ using UnityEngine.UI;
 public class LevelLoader : MonoBehaviour
 {
     public Slider slider;
-    public Animator animator;
+
+    public Animator intro;
+
+    public float transitionTime = 1f;
 
     public void IntroAnimation()
     {
-        animator.SetTrigger("Start");
+        intro.SetTrigger("Start");
     }
 
     public void LoadLevel(int sceneIndex)
     {
         StartCoroutine(LoadAsync(sceneIndex));
     }
-    
+
     IEnumerator LoadAsync(int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
