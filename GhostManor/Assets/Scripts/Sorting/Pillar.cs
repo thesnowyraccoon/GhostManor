@@ -19,7 +19,7 @@ public class Pillar : MonoBehaviour
     void CheckHands()
     {
         SoundManager.Play("Correct");
-        //transform.player.heldObject = pillar point
+        //player.heldObject.MoveToPillar(pillarPoint.position);
         
         player.heldObject = null;
 
