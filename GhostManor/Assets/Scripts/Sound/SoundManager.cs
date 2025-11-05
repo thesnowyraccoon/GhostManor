@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
 {
     private static SoundManager Instance;
     private static AudioSource audioSource;
+    private static AudioSource ttsSource;
     private static SoundEffectLibrary soundEffectLibrary;
 
     //UI
@@ -23,7 +24,9 @@ public class SoundManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            audioSource = GetComponent<AudioSource>();
+            AudioSource[] audioSources = GetComponents<AudioSource>();
+            audioSource = audioSources[0];
+            ttsSource = audioSources[1];
             soundEffectLibrary = GetComponent<SoundEffectLibrary>();
             //DontDestroyOnLoad(gameObject);
         }
@@ -40,6 +43,16 @@ public class SoundManager : MonoBehaviour
         if (audioClip != null)
         {
             audioSource.PlayOneShot(audioClip);
+            ttsSource.PlayOneShot(audioClip);
+        }
+    }
+
+     public static void PlayVoice(string effectName)
+    {
+        AudioClip audioClip = soundEffectLibrary.GetRandomClip(effectName);
+        if (audioClip != null)
+        {
+            ttsSource.PlayOneShot(audioClip);
         }
     }
 
@@ -52,6 +65,7 @@ public class SoundManager : MonoBehaviour
     public static void SetVolume(float volume)
     {
         audioSource.volume = volume;
+        ttsSource.volume = volume;
     }
 
     public void OnValueChanged()
