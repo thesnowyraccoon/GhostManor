@@ -18,11 +18,8 @@ public class NPC : MonoBehaviour, IInteractable
 
     public CompareObjects compare;
 
-    private enum CompareState { Correct, Incorrect, NotComparing }
-    private CompareState compareState = CompareState.NotComparing;
-
-    // private enum ObjectiveState { NotStarted, InProgress, Completed }
-    // private ObjectiveState objectiveState = ObjectiveState.NotStarted;
+    private enum ObjectiveState { Correct, Incorrect, InProgress, NotActive }
+    private ObjectiveState objectiveState = ObjectiveState.NotActive;
 
     void Start()
     {
@@ -53,17 +50,17 @@ public class NPC : MonoBehaviour, IInteractable
 
     void StartDialogue()
     {
-        SyncCompareState();
+        SyncObjectiveState();
 
-        if (compareState == CompareState.NotComparing)
+        if (objectiveState == ObjectiveState.NotActive)
         {
             dialogueIndex = 0;
         }
-        else if (compareState == CompareState.Incorrect)
+        else if (objectiveState == ObjectiveState.Incorrect)
         {
             dialogueIndex = dialogueData.incorrectItemIndex;
         }
-        else if (compareState == CompareState.Correct)
+        else if (objectiveState == ObjectiveState.Correct)
         {
             dialogueIndex = dialogueData.correctItemIndex;
         }
@@ -78,24 +75,23 @@ public class NPC : MonoBehaviour, IInteractable
         DisplayCurrentLine();
     }
 
-    private void SyncCompareState()
+    private void SyncObjectiveState()
     {
         if (compare != null)
         {
             if (compare.IsComparing() == 0)
             {
-                compareState = CompareState.Correct;
+                objectiveState = ObjectiveState.Correct;
             }
             else if (compare.IsComparing() == 1)
             {
-                compareState = CompareState.Incorrect;
+                objectiveState = ObjectiveState.Incorrect;
             }
             else if (compare.IsComparing() == 2)
             {
-                compareState = CompareState.NotComparing;
+                objectiveState = ObjectiveState.NotActive;
             } 
         }
-       
     }
 
     void NextLine()

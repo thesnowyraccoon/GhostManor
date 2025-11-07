@@ -9,21 +9,24 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewNPCDialogue", menuName = "NPC Dialogue")]
 public class NPCDialogue : ScriptableObject
 {
+    [Header("NPC Details")]
     public string npcName;
     //public Sprite npcPortrait;
 
+    [Header("Dialogue")]
     public string[] dialogueLines;
     public bool[] autoProgressLines;
     public bool[] endDialogueLines;
     public float autoProgressDelay = 1.5f;
     public float typingSpeed = 0.05f;
 
+    [Header("Objectives")]
     public int incorrectItemIndex;
     public int correctItemIndex;
+    public int inProgressIndex;
 
-    // public int objInProgressIndex;
-    // public int objCompletedIndex;
-    // public Objective objective;
+    public Objective objective;
 
-    // public bool[] givesObjective;
+    public bool[] givesObjective;
+    public bool[] givesItem;
 }
