@@ -154,10 +154,10 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void EndDialogue()
     {
-        if (objectiveState == ObjectiveState.Correct && !ObjectiveController.Instance.isObjHandedIn(dialogueData.objective.objectiveID))
-        {
-            HandleobjectiveCompletion(dialogueData.objective);
-        }
+        // if (objectiveState == ObjectiveState.Correct && !ObjectiveController.Instance.isObjHandedIn(dialogueData.objective.objectiveID))
+        // {
+        //     HandleobjectiveCompletion(dialogueData.objective);
+        // }
 
         StopAllCoroutines();
 
@@ -168,8 +168,8 @@ public class NPC : MonoBehaviour, IInteractable
         PauseController.SetPause(false);
     }
 
-    void HandleobjectiveCompletion(Objective objective)
-    {
-        ObjectiveController.Instance.HandInObjective(objective.objectiveID);
-    }
+    // void HandleobjectiveCompletion(Objective objective)
+    // {
+    //     ObjectiveController.Instance.HandInObjective(objective.objectiveID);
+    // }
 }

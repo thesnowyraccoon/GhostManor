@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.23270196, g: 0.34099057, b: 0.6075471, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: dac3ed3c4e4f4a44585ce006798cb45b, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -29178,7 +29178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &306327633
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34899,7 +34899,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -37332,7 +37332,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -70341,7 +70341,7 @@ Light:
   m_InnerSpotAngle: 31.556847
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -88457,7 +88457,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -91068,7 +91068,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -100334,7 +100334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1405511445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122590,7 +122590,7 @@ Light:
   m_InnerSpotAngle: 31.556847
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -138496,27 +138496,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5813874823060907341, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5813874823060907341, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5813874823060907341, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 213.08
       objectReference: {fileID: 0}
     - target: {fileID: 5813874823060907341, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 44.4
       objectReference: {fileID: 0}
     - target: {fileID: 5813874823060907341, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 126.54
       objectReference: {fileID: 0}
     - target: {fileID: 5813874823060907341, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -42.2
       objectReference: {fileID: 0}
     - target: {fileID: 8339094637116335548, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_Pivot.x
@@ -138548,7 +138548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8339094637116335548, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 84.4
       objectReference: {fileID: 0}
     - target: {fileID: 8339094637116335548, guid: 2a13e01bf5e7865479b316be7c71f4c8, type: 3}
       propertyPath: m_LocalPosition.x
