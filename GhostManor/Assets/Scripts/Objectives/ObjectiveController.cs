@@ -1,96 +1,113 @@
-// using System.Collections.Generic;
-// using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine;
 
-// // Create a Quest System with Scriptable Objects - Top Down Unity 2D #25
-// // Game Code Library
-// // 7 May 2025 
-// // Code Version: Unknown
-// // Available at: https://youtu.be/_hA3y45P4Ow?si=chsZa7y1_6Eb68jw
+// Create a Quest System with Scriptable Objects - Top Down Unity 2D #25
+// Game Code Library
+// 7 May 2025 
+// Code Version: Unknown
+// Available at: https://youtu.be/_hA3y45P4Ow?si=chsZa7y1_6Eb68jw
 
-// public class ObjectiveController : MonoBehaviour
-// {
-//     [SerializeField] private FPController player;
-//     [SerializeField] private HotbarController hotbar;
+public class ObjectiveController : MonoBehaviour
+{
+    [SerializeField] private FPController player;
+    [SerializeField] private HotbarController hotbar;
 
-//     public static ObjectiveController Instance { get; private set; }
-//     public List<ObjectiveProgress> activeObjectives = new();  
+    public static ObjectiveController Instance { get; private set; }
+    public List<Objective> activeObjectives = new();
+    public List<string> handinObjectiveIDs = new();
+    
+    private ObjectiveUI objectiveUI;
+ 
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
 
-//     private ObjectiveUI objectiveUI;
+        objectiveUI = FindAnyObjectByType<ObjectiveUI>();
+    }
 
-//     public List<string> handinObjectiveIds = new();
+    public void AcceptObjective(Objective objective)
+    {
+        if (IsObjActive(objective.objectiveID)) return;
 
-//     private void Awake()
-//     {
-//         if (Instance == null) Instance = this;
-//         else Destroy(gameObject);
+        Debug.Log("Quest Accepted");
 
-//         objectiveUI = FindAnyObjectByType<ObjectiveUI>();
-//     }
+        activeObjectives.Add(objective);
 
-//     public void AcceptObjective(Objective objective)
-//     {
-//         if (IsObjActive(objective.objectiveID)) return;
+        objectiveUI.UpdateObjectiveUI();
+    }
 
-//         Debug.Log("Quest Accepted");
+    public bool IsObjActive(string objectiveID)
+    {
+        for (int i = 0; i < activeObjectives.Count; i++)
+        {
+            if (activeObjectives[i].objectiveID == objectiveID)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 
-//         activeObjectives.Add(new ObjectiveProgress(objective));
+    public bool IsObjCompleted(string objectiveID)
+    {
+        for (int i = 0; i < handinObjectiveIDs.Count; i++)
+        {
+            if (handinObjectiveIDs[i] == objectiveID)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 
-//         objectiveUI.UpdateObjectiveUI();
-//     }
+    public void HandInObjective(string objectiveID)
+    {
+        if (!RemoveObjItems(objectiveID))
+        {
+            return;
+        }
 
-//     public bool IsObjActive(string objectiveID) => activeObjectives.Exists(o => o.ObjectiveID == objectiveID);
+        ObjectiveProgress objective = activeObjectives.Find(o => o.ObjectiveID == objectiveID);
 
-//     public bool IsObjCompleted(string objectiveID)
-//     {
-//         ObjectiveProgress objective = activeObjectives.Find(o => o.ObjectiveID == objectiveID);
-//         return objective != null && objective.tasks.TrueForAll(o => o.isCompleted);
-//     }
+        if (objective != null)
+        {
+            handinObjectiveIDs.Add(objectiveID);
 
-//     public void HandInObjective(string objectiveID)
-//     {
-//         if (!RemoveObjItems(objectiveID))
-//         {
-//             return;
-//         }
+            activeObjectives.Remove(objective);
+            objectiveUI.UpdateObjectiveUI();
+        }
+    }
 
-//         ObjectiveProgress objective = activeObjectives.Find(o => o.ObjectiveID == objectiveID);
+    public bool isObjHandedIn(string objectiveID)
+    {
+        return handinObjectiveIDs.Contains(objectiveID);
+    }
 
-//         if (objective != null)
-//         {
-//             handinObjectiveIds.Add(objectiveID);
+    public bool RemoveObjItems(string objectiveID)
+    {
+        ObjectiveProgress objective = activeObjectives.Find(o => o.ObjectiveID == objectiveID);
 
-//             activeObjectives.Remove(objective);
-//             objectiveUI.UpdateObjectiveUI();
-//         }
-//     }
+        if (objective == null) return false;
 
-//     public bool isObjHandedIn(string objectiveID)
-//     {
-//         return handinObjectiveIds.Contains(objectiveID);
-//     }
+        Dictionary<int, int> requiredItems = new();
 
-//     public bool RemoveObjItems(string objectiveID)
-//     {
-//         ObjectiveProgress objective = activeObjectives.Find(o => o.ObjectiveID == objectiveID);
+        foreach (ObjectiveTask task in objective.tasks)
+        {
+            if (task.type == TaskType.CollectItem && int.TryParse(task.taskID, out int itemID))
+            {
+                requiredItems[itemID] = task.requiredAmount;
+            }
+        }
 
-//         if (objective == null) return false;
+        foreach (var itemRequirement in requiredItems)
+        {
+            hotbar.RemoveItem(player.heldObject.gameObject);
+            Destroy(player.heldObject.gameObject);
+        }
 
-//         Dictionary<int, int> requiredItems = new();
-
-//         foreach (ObjectiveTask task in objective.tasks)
-//         {
-//             if (task.type == TaskType.CollectItem && int.TryParse(task.taskID, out int itemID))
-//             {
-//                 requiredItems[itemID] = task.requiredAmount;
-//             }
-//         }
-
-//         foreach (var itemRequirement in requiredItems)
-//         {
-//             hotbar.RemoveItem(player.heldObject.gameObject);
-//             Destroy(player.heldObject.gameObject);
-//         }
-
-//         return true;
-//     }
-// }
+        return true;
+    }
+}
