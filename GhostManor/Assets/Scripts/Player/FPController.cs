@@ -9,6 +9,9 @@ public class FPController : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 1.5f;
 
+    private bool playingFootSteps = false;
+    public float footStepSpeed = 0.5f;
+
     private float currentSpeed;
 
     [Header("Look Settings")]
@@ -67,11 +70,29 @@ public class FPController : MonoBehaviour
         if (context.performed)
         {
             animator.SetBool("isWalking", true);
+            StartFootSteps();
         }
         else
         {
             animator.SetBool("isWalking", false);
+            StopFootSteps();
         }
+    }
+
+
+    void StartFootSteps()
+    {
+        playingFootSteps = true;
+        InvokeRepeating(nameof(PlayFootstep), 0f, footStepSpeed);
+    }
+    void StopFootSteps()
+    {
+        playingFootSteps = false;
+        CancelInvoke(nameof(PlayFootstep));
+    }
+    void PlayFootstep()
+    {
+        SoundManager.Play("Footsteps");
     }
 
     public void OnLook(InputAction.CallbackContext context)
