@@ -1,14 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(NPC))]
 public class Pillar : MonoBehaviour
 {
 
-    [Header("Player")]
     public FPController player;
     public Item objectType;
     public HotbarController hotbar;
-    public GameObject pillarPoint; 
+    public GameObject pillarPoint;
+    public static bool hasItem = false;
 
 
     void Start()
@@ -20,6 +19,7 @@ public class Pillar : MonoBehaviour
     {
         SoundManager.Play("Correct");
         //player.heldObject.MoveToPillar(pillarPoint.position);
+        hasItem = true; 
         
         player.heldObject = null;
 
