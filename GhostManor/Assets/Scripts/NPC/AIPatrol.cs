@@ -23,7 +23,7 @@ public class AIPatrol : MonoBehaviour
     {
         // if dialogueisactive
         // {
-        // NPC.acceleration = 0f;
+        // NPC.isStopped = true;
         //idle.SetBool("isMoving", isMoving); 
         // }
 
@@ -35,7 +35,7 @@ public class AIPatrol : MonoBehaviour
             //Reset to the first point
             if (currentPoint >= patrolPoints.Length)
             {
-                //NPC.acceleration = 120f;
+                //NPC.isStopped = false;
                 idle.SetBool("isMoving", isMoving); 
                 currentPoint = 0;
             }
