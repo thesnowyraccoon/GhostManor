@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Entities;
 using UnityEngine;
 
 // Create a Quest System with Scriptable Objects - Top Down Unity 2D #25
@@ -11,11 +12,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Objectives/Objective")]
 public class Objective : ScriptableObject
 {
+    [Header("Details")]
     public string objectiveID;
     public string objectiveName;
-    public string description;
 
-    public GameObject objectiveItem;
+    [Header("Item/Reward")]
+    public int objectiveItemID;
     public GameObject objectiveReward;
 
     private void OnValidate()

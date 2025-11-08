@@ -4,7 +4,7 @@ public class DoorInteract : MonoBehaviour, IInteractable
 {
     public FPController player;
     public HotbarController hotbar;
-    public Item keyType;
+    public int keyID;
 
     private Animator animator;
 
@@ -32,18 +32,20 @@ public class DoorInteract : MonoBehaviour, IInteractable
         }
         else if (isLocked == true)
         {
-            if (keyType == player.heldObject)
+            if (keyID == player.heldObject.itemID)
             {
                 isLocked = false;
 
-                GameObject item = player.heldObject.gameObject;
+                GameObject held = player.heldObject.gameObject;
 
                 player.heldObject.Drop();
+                player.heldObject = null;
 
-                hotbar.RemoveItem(item);
+                hotbar.RemoveItem(held);
+
+                Destroy(held);
+                
                 hotbar.RebuildHotbar();
-
-                item.SetActive(false);
 
                 //Play unlocked sound
             }

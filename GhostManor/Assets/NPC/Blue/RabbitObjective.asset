@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e158fe49b06274c9a2574e9b69503a, type: 3}
+  m_Name: RabbitObjective
+  m_EditorClassIdentifier: 
+  objectiveID: Find the Walletaf406399-e61c-4498-aa37-7f5b9e0410d6
+  objectiveName: Find the Wallet
+  objectiveItemID: 0
+  objectiveReward: {fileID: 4471868529424133094, guid: 042645521c9eb4d409b6d208ff63a473, type: 3}

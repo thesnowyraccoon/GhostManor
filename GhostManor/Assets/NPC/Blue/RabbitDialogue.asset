@@ -25,9 +25,14 @@ MonoBehaviour:
   - When you speak to the ghosts they may give you hints
   - Yeah... Thats it... Thank you
   - I dont think thats quite it
-  autoProgressLines: 0001010001000100000000
-  endDialogueLines: 0000000000000001010101
+  - AHHHHHHHH
+  autoProgressLines: 000101000100010000000000
+  endDialogueLines: 000000000000000101010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   incorrectItemIndex: 10
   correctItemIndex: 9
+  inProgressIndex: 11
+  objective: {fileID: 11400000, guid: 25504a8e57b6a284aa3ab616c19d0f5b, type: 2}
+  givesObjective: 000000000000000100000000
+  givesItem: 000000000000000000010000
