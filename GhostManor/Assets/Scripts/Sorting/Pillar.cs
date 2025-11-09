@@ -1,55 +1,42 @@
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class Pillar : MonoBehaviour
+public class Pillar : MonoBehaviour, IInteractable
 {
 
     public FPController player;
     public Item objectType;
     public HotbarController hotbar;
-    public GameObject pillarPoint;
+    public Transform pillarPoint;
     public static bool hasItem = false;
 
-
-    void Start()
+     public void Interact()
     {
-        
-    }
-
-    void CheckHands()
-    {
-        SoundManager.Play("Correct");
-        //player.heldObject.MoveToPillar(pillarPoint.position);
-        hasItem = true; 
-        
-        player.heldObject = null;
-
-        hotbar.RebuildHotbar();
-
-        
-    }
-
-    public int IsComparing()
-    {
-        if (objectType == player.heldObject)
+        if (player.heldObject == objectType)
         {
-            CheckHands();
+            SoundManager.Play("Correct");
 
-            return 0;
+            Item item = player.heldObject;
+            player.heldObject.Drop();
+            player.heldObject = null;
+
+            hotbar.RebuildHotbar();
+
+            item.PickUp(pillarPoint);
+            item.MoveToHoldPoint(pillarPoint.position);
+
         }
         else if (player.heldObject != null && objectType != player.heldObject)
         {
             SoundManager.Play("Wrong");
-            return 1;
+            Debug.Log("Wrong Item");
         }
         else if (player.heldObject == null)
         {
             Debug.Log("Hands Empty");
-            return 2;
         }
-        else
-        {
-            return 3;
-        }
-        
     }
+
+   
 }
