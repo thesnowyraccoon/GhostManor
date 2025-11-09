@@ -30,6 +30,8 @@ public class MenuController : MonoBehaviour
 
     public void OnPause(InputAction.CallbackContext context)
     {
+        ActivateMenu(0);
+
         if (context.performed)
         {
             AnimateMenu();
