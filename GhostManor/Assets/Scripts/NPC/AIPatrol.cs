@@ -33,19 +33,22 @@ public class AIPatrol : MonoBehaviour
             agent.isStopped = true;
         
         }
-        else if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        else 
         {
             agent.isStopped = false;
-            currentPoint++;
-            //idle.SetBool("isMoving", isMoving);
-
-            //Reset to the first point
-            if (currentPoint >= patrolPoints.Length)
+            
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
             {
+                currentPoint++;
+
+                if (currentPoint >= patrolPoints.Length)
+                {
                 currentPoint = 0;
-            }
+                }
 
             agent.SetDestination(patrolPoints[currentPoint].position);
+            }
+            
         }
 
 
