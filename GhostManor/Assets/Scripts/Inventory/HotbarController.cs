@@ -53,7 +53,9 @@ public class HotbarController : MonoBehaviour
         }
 
         if (player.holdPoint.GetChild(index).TryGetComponent<Item>(out var heldItem))
+        {
             heldItem.gameObject.SetActive(true);
+        }
 
         player.heldObject = heldItem;
     }
@@ -62,6 +64,8 @@ public class HotbarController : MonoBehaviour
     {
         if (!context.performed) return;
 
+        if (player.holdPoint.childCount < 1) return;
+
         OpenItemSlot(0);
     }
 
@@ -69,12 +73,16 @@ public class HotbarController : MonoBehaviour
     {
         if (!context.performed) return;
 
+        if (player.holdPoint.childCount < 2) return;
+
         OpenItemSlot(1);
     }
 
     public void OnHotBar3(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
+
+        if (player.holdPoint.childCount < 3) return;
 
         OpenItemSlot(2);
     }

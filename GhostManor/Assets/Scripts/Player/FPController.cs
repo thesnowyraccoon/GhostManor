@@ -192,7 +192,6 @@ public class FPController : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
         {
-
             if (hit.collider.CompareTag("Item"))
             {
                 Item pickUp = hit.collider.GetComponent<Item>();
