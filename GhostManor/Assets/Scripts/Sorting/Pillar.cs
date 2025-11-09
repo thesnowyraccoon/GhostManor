@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class Pillar : MonoBehaviour, IInteractable
 {
-
+    [Header("Player")]
     public FPController player;
-    public Item objectType;
     public HotbarController hotbar;
-    public Transform pillarPoint;
-    public static bool hasItem = false;
 
-     public void Interact()
+    private EndGameController end;
+
+    [Header("Item")]
+    public Item objectType;
+
+    [Header("Pillar")]
+    public Transform pillarPoint;
+
+    void Start()
     {
+        end = GetComponentInParent<EndGameController>();
+    }
+
+    public void Interact()
+    {
+        if (objectType == null) return;
+
         if (player.heldObject == objectType)
         {
             SoundManager.Play("Correct");
 
             Item item = player.heldObject;
+
             player.heldObject.Drop();
             player.heldObject = null;
 
@@ -26,6 +39,7 @@ public class Pillar : MonoBehaviour, IInteractable
             item.PickUp(pillarPoint);
             item.MoveToHoldPoint(pillarPoint.position);
 
+            end.CheckEnd();
         }
         else if (player.heldObject != null && objectType != player.heldObject)
         {
@@ -37,6 +51,4 @@ public class Pillar : MonoBehaviour, IInteractable
             Debug.Log("Hands Empty");
         }
     }
-
-   
 }

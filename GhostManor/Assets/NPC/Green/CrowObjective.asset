@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e158fe49b06274c9a2574e9b69503a, type: 3}
+  m_Name: CrowObjective
+  m_EditorClassIdentifier: 
+  objectiveID: Find Medicine2f931106-936e-4c3d-a041-4a3266282794
+  objectiveName: Find Medicine
+  objectiveItemID: 12
+  objectiveReward: {fileID: 2075876571800030705, guid: b835ad85637a33448aa6a4ca727b5780, type: 3}

@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour, IInteractable
     public ParticleSystem flames;
     public ParticleSystem stars;
 
+    [Header("Player")]
     public FPController player;
 
     private DialogueController dialogueUI;
@@ -32,7 +33,6 @@ public class NPC : MonoBehaviour, IInteractable
     void Start()
     {
         dialogueUI = DialogueController.Instance;
-        player = FindAnyObjectByType<FPController>();
     }
 
     public void Interact()

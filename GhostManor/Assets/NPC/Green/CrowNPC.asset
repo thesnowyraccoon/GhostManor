@@ -20,9 +20,14 @@ MonoBehaviour:
   - Thats not medicine
   - 'cough cough '
   - Ah thats better
-  autoProgressLines: 010000010000
-  endDialogueLines: 000101000101
+  - WAH
+  autoProgressLines: 01000001000000
+  endDialogueLines: 00010100010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   incorrectItemIndex: 3
   correctItemIndex: 5
+  inProgressIndex: 6
+  objective: {fileID: 11400000, guid: c3c0186214a70114daa151757450ed51, type: 2}
+  givesObjective: 00010000000000
+  givesItem: 00000000000100
