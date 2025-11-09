@@ -94,7 +94,12 @@ public class NPC : MonoBehaviour, IInteractable
 
     private void SyncObjectiveState()
     {
-        if (dialogueData.objective == null) return;
+        if (dialogueData.objective == null)
+        {
+            Debug.Log("No objective");
+
+            return;
+        }
 
         string objectiveID = dialogueData.objective.objectiveID;
 
@@ -142,7 +147,7 @@ public class NPC : MonoBehaviour, IInteractable
             isTyping = false;
         }
 
-        if (dialogueData.givesObjective[dialogueIndex] && dialogueData.objective != null)
+        if (dialogueData.givesObjective.Length > dialogueIndex && dialogueData.givesObjective[dialogueIndex] && dialogueData.objective != null)
         {
             EndDialogue();
             StartObjective();
@@ -150,7 +155,7 @@ public class NPC : MonoBehaviour, IInteractable
             return;
         }
 
-        if (dialogueData.givesItem[dialogueIndex] && dialogueData.objective != null)
+        if (dialogueData.givesItem.Length > dialogueIndex && dialogueData.givesItem[dialogueIndex] && dialogueData.objective != null)
         {
             EndDialogue();
             GiveReward();
