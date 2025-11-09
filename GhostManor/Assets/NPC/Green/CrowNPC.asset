@@ -15,19 +15,21 @@ MonoBehaviour:
   npcName: Crow
   dialogueLines:
   - Cough cough cough
-  - Ugh, I need my medication
-  - Cough cough
-  - Thats not medicine
+  - I need to find my book
+  - I can figure out how to cure myself
+  - I dont see how thats useful to me
   - 'cough cough '
-  - Ah thats better
-  - WAH
-  autoProgressLines: 01000001000000
-  endDialogueLines: 00010100010101
+  - You found it! Thank you
+  - Maybe this will be of use to you
+  - He mustve hidden the book. Its not here
+  - Its not here...
+  autoProgressLines: 010100010001000100
+  endDialogueLines: 000001000101010001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   incorrectItemIndex: 3
   correctItemIndex: 5
-  inProgressIndex: 6
+  inProgressIndex: 7
   objective: {fileID: 11400000, guid: c3c0186214a70114daa151757450ed51, type: 2}
-  givesObjective: 00010000000000
-  givesItem: 00000000000100
+  givesObjective: 000001000000000000
+  givesItem: 000000000000010000

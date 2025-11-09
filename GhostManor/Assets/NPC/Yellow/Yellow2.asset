@@ -14,15 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Lamb
   dialogueLines:
-  - I left my locket downstairs
-  - I cant go fetch it while he still has guests over
-  - Could you bring it up for me?
+  - I-it-its so cold up her-r-e
   - mmmm
-  - Thank you!
-  - I miss my dad
-  autoProgressLines: 010100000100
-  endDialogueLines: 000001010001
+  - Thank you! Thats better
+  - My dad told me to hold onto this
+  - But i trust you
+  - I-i-i Cant go anywhere while my-my dad has guests
+  autoProgressLines: 000000000100
+  endDialogueLines: 010100000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  incorrectItemIndex: 3
-  correctItemIndex: 4
+  incorrectItemIndex: 1
+  correctItemIndex: 2
+  inProgressIndex: 5
+  objective: {fileID: 11400000, guid: 3d38af2736eff6f44b72fe636198848a, type: 2}
+  givesObjective: 010000000000
+  givesItem: 000000000100

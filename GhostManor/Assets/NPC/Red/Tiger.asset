@@ -18,12 +18,19 @@ MonoBehaviour:
   - After everything Ive done for him
   - That backstabber
   - Bring me the knife.
-  - You going to stab me too?
   - Thats not a knife
-  - Now I can get revenge...
-  autoProgressLines: 01010000000000
-  endDialogueLines: 00000001010101
+  - Now I can get revenge... But Ill help you since you helped me.
+  - This room is where the ritual happened
+  - You need to place personal objects on each pillar
+  - Theres a note somewhere here with those items
+  - The. Knife.
+  autoProgressLines: 01010000000101000000
+  endDialogueLines: 00000001010000000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  incorrectItemIndex: 5
-  correctItemIndex: 6
+  incorrectItemIndex: 4
+  correctItemIndex: 5
+  inProgressIndex: 9
+  objective: {fileID: 11400000, guid: d372638ee9d346347a688d4ba046c7c4, type: 2}
+  givesObjective: 000000010000000000
+  givesItem: 

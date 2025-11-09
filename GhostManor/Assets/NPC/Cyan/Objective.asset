@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99e158fe49b06274c9a2574e9b69503a, type: 3}
-  m_Name: CrowObjective
+  m_Name: Objective
   m_EditorClassIdentifier: 
-  objectiveID: Find the book of Poisonsa52c040d-2a64-4d88-87b8-6834eee6d1cd
-  objectiveName: Find the book of Poisons
-  objectiveItemID: 14
-  objectiveReward: {fileID: 2075876571800030705, guid: b835ad85637a33448aa6a4ca727b5780, type: 3}
+  objectiveID: Find his Wallete014b258-5616-448d-a00b-60e986119c94
+  objectiveName: Find his Wallet
+  objectiveItemID: 20
+  objectiveReward: {fileID: 9028531841698988802, guid: f5362098f3b609147be23d57c68cce3e, type: 3}

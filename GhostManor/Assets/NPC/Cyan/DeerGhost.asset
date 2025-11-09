@@ -16,14 +16,18 @@ MonoBehaviour:
   dialogueLines:
   - I dont remember much
   - I can only remeber her, theres a photo of her somewhere
-  - Why cant I remember anything....
-  - 'My head hurts '
   - My Mon Cheri, thank you
+  - I think this will be of use to you
+  - Ive always held onto it... But it could free us
   - I dont remember this
-  - Its not what im looking for
-  autoProgressLines: 01000000000100
-  endDialogueLines: 00010101010001
+  - 'My head hurts '
+  autoProgressLines: 01000100000000
+  endDialogueLines: 00010000010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   incorrectItemIndex: 5
-  correctItemIndex: 4
+  correctItemIndex: 2
+  inProgressIndex: 6
+  objective: {fileID: 11400000, guid: e7faa11570e58d246bf391599b0fed5c, type: 2}
+  givesObjective: 00010000000000
+  givesItem: 00000001000000

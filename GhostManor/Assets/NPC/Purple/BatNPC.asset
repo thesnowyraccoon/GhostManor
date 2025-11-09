@@ -16,14 +16,18 @@ MonoBehaviour:
   dialogueLines:
   - Who- who are you...
   - I cant see anything without my glasses
-  - everything is a blur
   - What is this??
   - I cant see it
   - Ha! I can finally see again
   - Who are you... Youre not him.
-  autoProgressLines: 00000001000100
-  endDialogueLines: 01010100010001
+  - everything is a blur
+  autoProgressLines: 01000000010000
+  endDialogueLines: 00010001000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  incorrectItemIndex: 3
-  correctItemIndex: 5
+  incorrectItemIndex: 2
+  correctItemIndex: 4
+  inProgressIndex: 6
+  objective: {fileID: 11400000, guid: 429c07e0b56148b46a5dc235a01023a8, type: 2}
+  givesObjective: 00010000000000
+  givesItem: 
