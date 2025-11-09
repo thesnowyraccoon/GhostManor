@@ -9,9 +9,10 @@ using UnityEngine.AI;
 
 public class AIPatrol : MonoBehaviour
 {
-    private NavMeshAgent NPC;
+    private NavMeshAgent agent;
     public Transform[] patrolPoints;
     private int currentPoint = 0;
+    public NPC dialogue;
 
     [SerializeField]
     private Animator idle;
@@ -21,32 +22,30 @@ public class AIPatrol : MonoBehaviour
     void Start()
     {
         idle = GetComponentInParent<Animator>();
-        NPC = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
 
     void Update()
     {
-        // if dialogueisactive
-        // {
-        // NPC.isStopped = true;
-        //idle.SetBool("isMoving", isMoving); 
-        // }
-
-        // else
-        if (!NPC.pathPending && NPC.remainingDistance < 0.5f)
+        if (dialogue.isDialogueActive)
         {
+            agent.isStopped = true;
+        
+        }
+        else if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        {
+            agent.isStopped = false;
             currentPoint++;
+            //idle.SetBool("isMoving", isMoving);
 
             //Reset to the first point
             if (currentPoint >= patrolPoints.Length)
             {
-                //NPC.isStopped = false;
-                idle.SetBool("isMoving", isMoving);
                 currentPoint = 0;
             }
 
-            NPC.SetDestination(patrolPoints[currentPoint].position);
+            agent.SetDestination(patrolPoints[currentPoint].position);
         }
 
 

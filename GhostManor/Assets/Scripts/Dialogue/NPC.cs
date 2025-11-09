@@ -22,7 +22,9 @@ public class NPC : MonoBehaviour, IInteractable
     private DialogueController dialogueUI;
 
     private int dialogueIndex;
-    private bool isTyping, isDialogueActive;
+    private bool isTyping;
+    
+    [HideInInspector] public bool isDialogueActive;
 
     private enum ObjectiveState { Correct, Incorrect, InProgress, NotActive }
     private ObjectiveState objectiveState = ObjectiveState.NotActive;
