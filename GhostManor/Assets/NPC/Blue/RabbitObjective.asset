@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e158fe49b06274c9a2574e9b69503a, type: 3}
   m_Name: RabbitObjective
   m_EditorClassIdentifier: 
-  objectiveID: Find the Walletaf406399-e61c-4498-aa37-7f5b9e0410d6
-  objectiveName: Find the Wallet
-  objectiveItemID: 8
-  objectiveReward: {fileID: 4471868529424133094, guid: 042645521c9eb4d409b6d208ff63a473, type: 3}
+  objectiveID: Find the Bonesaw74b1b0a3-4772-49af-a974-256997a67130
+  objectiveName: Find the Bonesaw
+  objectiveItemID: 2
+  objectiveReward: {fileID: 3190106151606165244, guid: 042645521c9eb4d409b6d208ff63a473, type: 3}
