@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveID: Find the Walletaf406399-e61c-4498-aa37-7f5b9e0410d6
   objectiveName: Find the Wallet
-  objectiveItemID: 0
+  objectiveItemID: 8
   objectiveReward: {fileID: 4471868529424133094, guid: 042645521c9eb4d409b6d208ff63a473, type: 3}

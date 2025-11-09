@@ -34607,24 +34607,6 @@ MonoBehaviour:
   flames: {fileID: 1172428945}
   stars: {fileID: 1836869659}
   player: {fileID: 1569261697}
---- !u!114 &384058670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384058664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 255bb69e27e04c64c99680aa525f1367, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flames: {fileID: 1172428945}
-  stars: {fileID: 1836869659}
-  player: {fileID: 1569261697}
-  objectType: {fileID: 1919662084}
-  hotbar: {fileID: 2107641535}
-  npc: {fileID: 384058669}
 --- !u!1 &384900417
 GameObject:
   m_ObjectHideFlags: 0
@@ -35655,7 +35637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1569261697}
   hotbar: {fileID: 2107641535}
-  keyID: 0
+  keyID: 4
   isLocked: 1
 --- !u!65 &416833959
 BoxCollider:
@@ -70769,9 +70751,6 @@ PrefabInstance:
       addedObject: {fileID: 384058668}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d98b9e7d95e05c4aa3fd18a6769255a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 384058670}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d98b9e7d95e05c4aa3fd18a6769255a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 384058669}
   m_SourcePrefab: {fileID: 100100000, guid: 9d98b9e7d95e05c4aa3fd18a6769255a, type: 3}
 --- !u!1 &949327017
@@ -96050,17 +96029,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7718732723993627654, guid: 042645521c9eb4d409b6d208ff63a473, type: 3}
   m_PrefabInstance: {fileID: 9188431504049403188}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1308590969 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3338018599940721960, guid: 042645521c9eb4d409b6d208ff63a473, type: 3}
-  m_PrefabInstance: {fileID: 9188431504049403188}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8a53ee660035e41833e9a4b151f7fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1310034601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111822,7 +111790,7 @@ MonoBehaviour:
   - {fileID: 2002231287}
   - {fileID: 1827848196}
   - {fileID: 1798775296}
-  - {fileID: 1308590969}
+  - {fileID: 3338018599940721960, guid: 042645521c9eb4d409b6d208ff63a473, type: 3}
   - {fileID: 964531629}
   - {fileID: 1149202098}
   - {fileID: 1870968547}
