@@ -15,6 +15,8 @@ public class ItemUI : MonoBehaviour
     {
         //set shader false
         reticleActive.SetActive(false);
+        reticlePaw.SetActive(false);
+        reticleTalk.SetActive(false);
         reticle.SetActive(true);
     }
 
@@ -28,6 +30,8 @@ public class ItemUI : MonoBehaviour
             {
                 //set shader true
                 reticleActive.SetActive(true);
+                reticlePaw.SetActive(false);
+                reticleTalk.SetActive(false);
                 reticle.SetActive(false);
                 //Debug.Log("Yep thats an item");
 
@@ -42,11 +46,15 @@ public class ItemUI : MonoBehaviour
             else if (hit.collider.CompareTag("NPC"))
             {
                 reticleTalk.SetActive(true);
+                reticlePaw.SetActive(false);
+                reticleActive.SetActive(false);
                 reticle.SetActive(false);
             }
             else if (hit.collider.CompareTag("Interact"))
             {
                 reticlePaw.SetActive(true);
+                reticleActive.SetActive(false);
+                reticleTalk.SetActive(false);
                 reticle.SetActive(false); 
             }
             else

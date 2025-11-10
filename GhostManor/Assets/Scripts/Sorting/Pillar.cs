@@ -11,7 +11,7 @@ public class Pillar : MonoBehaviour, IInteractable
     private EndGameController end;
 
     [Header("Item")]
-    public Item objectType;
+    public int itemID;
 
     [Header("Pillar")]
     public Transform pillarPoint;
@@ -23,9 +23,9 @@ public class Pillar : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (objectType == null) return;
+        if (itemID == 0) return;
 
-        if (player.heldObject == objectType)
+        if (player.heldObject.itemID == itemID)
         {
             SoundManager.Play("Correct");
 
@@ -41,7 +41,7 @@ public class Pillar : MonoBehaviour, IInteractable
 
             end.CheckEnd();
         }
-        else if (player.heldObject != null && objectType != player.heldObject)
+        else if (player.heldObject != null && itemID != player.heldObject.itemID)
         {
             SoundManager.Play("Wrong");
             Debug.Log("Wrong Item");

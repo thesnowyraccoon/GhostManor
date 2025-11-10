@@ -58,8 +58,6 @@ public class ObjectiveController : MonoBehaviour
 
         if (objective != null && player.heldObject != null)
         {
-            Debug.Log("Checking");
-
             if (player.heldObject.itemID == objective.objectiveItemID) return true;
         }
         

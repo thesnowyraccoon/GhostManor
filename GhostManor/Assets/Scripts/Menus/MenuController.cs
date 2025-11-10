@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 // Add a Pause System to your Game! - Top Down Unity 2D #17
@@ -18,9 +20,14 @@ public class MenuController : MonoBehaviour
     public GameObject[] menus;
     public Button[] buttons;
 
+    [Header("Player")]
     public GameObject hotbarSlots;
     public Slider lookSlider;
+    public Slider brightSlider;
     public FPController player;
+
+    [Header("Post Processing")]
+    public Volume volume;
 
     void Start()
     {
@@ -76,6 +83,16 @@ public class MenuController : MonoBehaviour
     public void SensitivitySlider()
     {
         player.SetLookSensivity(lookSlider.value);
+    }
+
+    public void BrightnessSlider()
+    {
+        ColorAdjustments colorAdjustments;
+
+        if (volume.profile.TryGet(out colorAdjustments))
+        {
+            colorAdjustments.postExposure.value = brightSlider.value;
+        }
     }
 
     public void AnimateMenu()

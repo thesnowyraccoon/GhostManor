@@ -24,7 +24,7 @@ MonoBehaviour:
   - He mustve hidden the book. Its not here
   - Its not here...
   autoProgressLines: 010100010001000100
-  endDialogueLines: 000001000101010001
+  endDialogueLines: 000001000100010001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   incorrectItemIndex: 3
